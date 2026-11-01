@@ -1,0 +1,5 @@
+Autore: Alessandro Resch. 1 novembre 2026.
+Repository: https://github.com/r1zr7/ar-scrittura
+Richiesta preliminare pubblicata: https://github.com/google/fonts/issues/11207
+Non ammesso al catalogo; nome, CLA e requisiti tecnici ancora aperti.
+I documenti precedenti di candidatura sono bozze storiche, non dichiarazioni di ammissione.

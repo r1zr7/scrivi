@@ -108,5 +108,6 @@ copyright URL for catalog onboarding requires a subsequent binary revision.
 ChatGPT/Codex assisted drawing construction, font engineering, build scripts,
 testing, documentation and release preparation. Alessandro Resch directed the
 design decisions and reviewed the visual specimens. Google Fonts naming policy,
-CLA, residual warnings and editorial approval remain open; the font has not been
-submitted to or admitted by Google Fonts.
+CLA, residual warnings and editorial approval remain open; a preliminary review request was published at
+https://github.com/google/fonts/issues/11207 on 1 November 2026. The font is
+not admitted to Google Fonts.

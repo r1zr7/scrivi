@@ -52,7 +52,10 @@
 		}
 	},
 	"public_repository_created": true,
-	"catalog_submission_sent": false,
+	"catalog_submission_sent": true,
 	"public_package_date": "2026-10-29",
-	"public_repository_url": "https://github.com/r1zr7/ar-scrittura"
+	"public_repository_url": "https://github.com/r1zr7/ar-scrittura",
+	"catalog_submission_type": "preliminary naming and onboarding review",
+	"catalog_submission_url": "https://github.com/google/fonts/issues/11207",
+	"catalog_admitted": false
 }
