@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Alessandro Resch. SIL OFL 1.1. -->
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AR Scrittura · anteprima 1.003</title>
+	<link rel="stylesheet" href="web/ar-scrittura.css">
+	<style>
+		:root {color-scheme: light; --paper:#f6f4ef; --ink:#172d3a; --border:#c6cccb;}
+		* {box-sizing:border-box;}
+		body {margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif;}
+		main {max-width:1080px;margin:auto;padding:3rem clamp(1rem,4vw,3rem);}
+		h1 {font-size:clamp(3rem,9vw,7rem);line-height:1.2;margin:1.5rem 0;}
+		h2 {font:600 1.1rem/1.4 system-ui,sans-serif;margin:0 0 1rem;}
+		section {border-top:1px solid var(--border);padding:2rem 0;}
+		.meta {font-size:.95rem;}
+		.controls {display:flex;gap:2rem;flex-wrap:wrap;align-items:center;margin:1rem 0;}
+		label {display:inline-block;}
+		input,button {font:inherit;accent-color:#172d3a;}
+		button {padding:.45rem .8rem;border:1px solid currentColor;border-radius:.3rem;background:transparent;color:inherit;cursor:pointer;}
+		:focus-visible {outline:3px solid #097b97;outline-offset:4px;}
+		textarea {width:100%;min-height:220px;resize:vertical;padding:1rem;border:1px solid var(--border);border-radius:.3rem;background:transparent;color:inherit;font-size:64px;line-height:1.5;}
+		.alphabet {font-size:clamp(2rem,4.6vw,3.5rem);line-height:1.7;overflow-wrap:anywhere;margin:0;}
+		.row {display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;margin:1rem 0;}
+		.lockup {display:inline-flex;height:90px;vertical-align:middle;}
+		.prefix {display:grid;place-items:center;background:#172d3a;color:#fff;width:90px;font:500 1.8rem system-ui;}
+		.product {display:flex;align-items:center;background:white;color:#172d3a;padding:0 20px;font-size:66px;line-height:1;}
+		.dark {--paper:#101820;--ink:#f5f3ec;--border:#53616a;color-scheme:dark;}
+		footer {font-size:.9rem;border-top:1px solid var(--border);padding-top:1rem;}
+		@media(max-width:500px){.lockup{height:70px}.prefix{width:70px}.product{font-size:48px;padding:0 12px}}
+	</style>
+</head>
+<body>
+	<main>
+		<p class="meta">Alessandro Resch · 1.003 · SIL Open Font License 1.1</p>
+		<h1 class="ar-scrittura">AR Scrittura</h1>
+		<p>Un carattere sottile, semplice e con lettere separate. Famiglia approvata dall’autore: AR Scrittura. Candidato 1.003 con sorgenti UFO e compilazione riproducibile.</p>
+		<section aria-labelledby="try-heading">
+			<h2 id="try-heading">Scrivi qualcosa</h2>
+			<div class="controls">
+				<label for="size">Dimensione <output id="size-value" for="size">64 px</output> <input id="size" type="range" min="20" max="140" value="64"></label>
+				<button id="contrast" type="button" aria-pressed="false">Sfondo scuro</button>
+			</div>
+			<label for="test">Testo di prova</label>
+			<textarea id="test" class="ar-scrittura" spellcheck="false">Pochi segni, una voce personale.
+AR Scrittura — Alessandro Resch
+Semplicità, libertà, creatività.
+À È É Ì Ò Ù   à è é ì ò ù
+ĥ ȟ ǩ   ĥ ȟ ǩ   f ſ s   k ĸ x</textarea>
+		</section>
+		<section aria-labelledby="alphabet-heading">
+			<h2 id="alphabet-heading">Alfabeto e segni</h2>
+			<p class="alphabet ar-scrittura">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789<br>à è é ì ò ù Ä Ö Ü ß ç ñ ø æ œ<br>! ? &amp; @ € % + − = ( ) “ ” « »</p>
+		</section>
+		<section aria-labelledby="brand-heading">
+			<h2 id="brand-heading">Prova nei nomi dei prodotti</h2>
+			<p>Schema tipografico dei due blocchi; AR è scritto come testo, senza il monogramma definitivo.</p>
+			<div class="row">
+				<div class="lockup" aria-label="AR Tema"><span class="prefix">AR-</span><span class="product ar-scrittura">Tema</span></div>
+				<div class="lockup" aria-label="AR Club"><span class="prefix">AR-</span><span class="product ar-scrittura">Club</span></div>
+			</div>
+		</section>
+		<footer>
+			<p>392 caratteri · un solo stile Regular · nessuna risorsa esterna. Indicata per nomi, titoli e testi brevi; il testo dell’interfaccia usa un carattere di sistema.</p>
+			<p><a href="LEGGIMI.txt">Installazione e sorgenti</a> · <a href="OFL.txt">Licenza completa</a> · <a href="specimen/anteprima.png">Tavola del carattere</a> · <a href="specimen/accenti-alti-prima-dopo.png">Confronto accenti sulle aste</a> · <a href="specimen/speciali-prima-dopo.png">Confronto ſ e ĸ prima/dopo</a> · <a href="specimen/contorni-prima-dopo.png">Confronto storico dei contorni</a></p>
+		</footer>
+	</main>
+	<script>
+		const size = document.getElementById('size');
+		const text = document.getElementById('test');
+		const value = document.getElementById('size-value');
+		size.addEventListener('input', () => {
+			text.style.fontSize = `${size.value}px`;
+			value.value = `${size.value} px`;
+		});
+		document.getElementById('contrast').addEventListener('click', event => {
+			const dark = document.body.classList.toggle('dark');
+			event.currentTarget.setAttribute('aria-pressed', String(dark));
+			event.currentTarget.textContent = dark ? 'Sfondo chiaro' : 'Sfondo scuro';
+		});
+	</script>
+</body>
+</html>

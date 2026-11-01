@@ -1,0 +1,31 @@
+AR Scrittura — Alessandro Resch
+Versione font 1.003 — distribuzione pubblica autonoma.
+Nome famiglia approvato il 27 ottobre 2026.
+
+Installare fonts/ARScrittura-Regular.ttf oppure usare web/ar-scrittura.css.
+Nome CSS: 'AR Scrittura'. Non 'AR-Scrittura'.
+392 caratteri, Regular, licenza SIL Open Font License 1.1 senza Reserved Font Name.
+Anteprima offline: Anteprima.html, con testo di controllo già inserito.
+Confronto corrente: specimen/accenti-alti-prima-dopo.png (ĥ, ȟ e ǩ).
+Confronto storico dei contorni: specimen/contorni-prima-dopo.png (1.000 → 1.001).
+Aprire dalla nuova cartella ar-scrittura-1.003 per evitare la cache della versione precedente.
+Per installare il TTF in Windows, sostituire la precedente versione e riaprire i programmi.
+Sorgenti e report inclusi.
+
+README.md: installazione, compilazione e risultati dei test.
+PUBBLICAZIONE.md: passaggi ancora necessari per repository e cataloghi.
+OFL.txt: licenza completa.
+
+Il font non è ancora stato inviato/accettato da Google Fonts o altre directory.
+
+Revisione 1.003: accenti di ĥ, ȟ e ǩ alzati sopra le aste.
+Confronto: specimen/accenti-alti-prima-dopo.png.
+Autore: Alessandro Resch.
+
+Pacchetto pubblico preparato il 29 ottobre 2026.
+Le ultime correzioni sono state verificate nei campioni grandi e piccoli.
+Font invariato rispetto alla 1.003 già provata: aggiornati solo i materiali.
+USO-WEB.txt: come pubblicare il font e lo ZIP sul proprio sito.
+TESTO-PRESENTAZIONE.txt: testo per la pagina del progetto.
+submission/: materiale tecnico in bozza per Google Fonts.
+Non è un tema o plugin WordPress: lo ZIP non va installato come tale.

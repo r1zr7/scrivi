@@ -1,0 +1,24 @@
+{
+	"result": "PASS",
+	"encoded_characters": 392,
+	"glyphs": 394,
+	"checks": [
+		"TTF and WOFF2 load and relevant tables match",
+		"ASCII, Latin-1 Supplement and Latin Extended-A complete",
+		"All mapped characters shape without .notdef",
+		"Glyph bounds within vertical metrics",
+		"Precomposed/decomposed accent samples equivalent",
+		"Kerning changes the To pair",
+		"Dotless i and j substitutions before unsupported precomposed accents",
+		"License, author, family and embedding metadata checked"
+	],
+	"limitations": [
+		"Author approved AR Scrittura; Google Fonts admission and naming review pending",
+		"Only Regular; review covers selected supported languages, not every possible text",
+		"Combining marks and above-mark stacking provided; arbitrary stacks can exceed normal line height"
+	],
+	"sha256": {
+		"ARScrittura-Regular.ttf": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2",
+		"AR-Scrittura-Regular.woff2": "4c0815cc659427f23430786aa6de2b631c6f77f734d67c639153e9d6f1eaca43"
+	}
+}

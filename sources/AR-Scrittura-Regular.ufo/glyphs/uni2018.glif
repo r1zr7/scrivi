@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni2018" format="2">
+  <advance width="154"/>
+  <unicode hex="2018"/>
+  <outline>
+    <contour>
+      <point x="86" y="691" type="line"/>
+      <point x="98" y="704" type="line"/>
+      <point x="105" y="706" type="line"/>
+      <point x="108" y="705" type="line"/>
+      <point x="114" y="702" type="line"/>
+      <point x="117" y="697" type="line"/>
+      <point x="118" y="693" type="line"/>
+      <point x="116" y="687" type="line"/>
+      <point x="96" y="664" type="line"/>
+      <point x="89" y="653" type="line"/>
+      <point x="77" y="632" type="line"/>
+      <point x="70" y="609" type="line"/>
+      <point x="66" y="586" type="line"/>
+      <point x="66" y="574" type="line"/>
+      <point x="68" y="544" type="line"/>
+      <point x="66" y="538" type="line"/>
+      <point x="64" y="536" type="line"/>
+      <point x="58" y="534" type="line"/>
+      <point x="54" y="534" type="line"/>
+      <point x="48" y="536" type="line"/>
+      <point x="44" y="541" type="line"/>
+      <point x="42" y="558" type="line"/>
+      <point x="41" y="587" type="line"/>
+      <point x="45" y="615" type="line"/>
+      <point x="49" y="629" type="line"/>
+      <point x="60" y="654" type="line"/>
+      <point x="68" y="667" type="line"/>
+    </contour>
+  </outline>
+</glyph>

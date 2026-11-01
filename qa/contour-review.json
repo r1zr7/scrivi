@@ -1,0 +1,38 @@
+{
+	"result": "PASS",
+	"version": "1.003",
+	"author": "Alessandro Resch",
+	"checks": [
+		{
+			"character": "ĺ",
+			"contours": 2,
+			"minimum_separation_font_units": 66.94
+		},
+		{
+			"character": "Ș",
+			"contours": 2,
+			"minimum_separation_font_units": 48.0
+		},
+		{
+			"character": "ș",
+			"contours": 2,
+			"minimum_separation_font_units": 49.01
+		},
+		{
+			"character": "Ț",
+			"contours": 2,
+			"minimum_separation_font_units": 73.17
+		},
+		{
+			"character": "ț",
+			"contours": 2,
+			"minimum_separation_font_units": 67.09
+		},
+		{
+			"character": "◌",
+			"separate_dots": 12,
+			"minimum_dot_diameter_font_units": 43.0
+		}
+	],
+	"sha256": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2"
+}

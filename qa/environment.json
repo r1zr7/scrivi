@@ -1,0 +1,15 @@
+{
+	"fonttools": "4.61.1",
+	"fontmake": "3.12.2",
+	"ufoLib2": "0.19.1",
+	"ufo2ft": "3.9.1",
+	"shapely": "2.2.0",
+	"numpy": "2.3.5",
+	"brotli": "1.2.1",
+	"uharfbuzz": "0.57.0",
+	"Pillow": "12.3.0",
+	"fontbakery": "1.1.0",
+	"glyphsets": "1.1.0",
+	"gflanguages": "0.7.7",
+	"opentype-sanitizer": "9.2.0"
+}

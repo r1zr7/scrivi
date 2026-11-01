@@ -1,0 +1,32 @@
+AR Scrittura — sottoinsiemi Google Fonts
+Autore: Alessandro Resch. 29 ottobre 2026.
+Stato: aperto per la candidatura; nessuna richiesta inviata.
+
+I seguenti 15 caratteri sono presenti nel font completo 1.003, ma il controllo
+FontBakery 1.1.0 con glyphsets 1.1.0 li segnala fuori da latin/latin-ext:
+
+U+02D8  BREVE
+U+02D9  DOT ABOVE
+U+02DB  OGONEK
+U+0302  COMBINING CIRCUMFLEX ACCENT
+U+0306  COMBINING BREVE
+U+0307  COMBINING DOT ABOVE
+U+030A  COMBINING RING ABOVE
+U+030B  COMBINING DOUBLE ACUTE ACCENT
+U+030C  COMBINING CARON
+U+0326  COMBINING COMMA BELOW
+U+0327  COMBINING CEDILLA
+U+0328  COMBINING OGONEK
+U+1EBC  LATIN CAPITAL LETTER E WITH TILDE
+U+1EBD  LATIN SMALL LETTER E WITH TILDE
+U+25CC  DOTTED CIRCLE
+
+Mantenere latin e latin-ext (oltre a menu per il catalogo). Non dichiarare
+alfabeti non supportati per nascondere il WARN. Concordare con il team Google
+Fonts l’inclusione dei codepoint pertinenti nei set del servizio. Non si tratta
+di una correzione ottenibile semplicemente aggiungendo codice locale al TTF.
+Il font completo distribuito dal sito mantiene tutti questi caratteri.
+
+Riferimenti:
+https://googlefonts.github.io/gf-guide/metadata.html
+https://googlefonts.github.io/gf-guide/onboarder-workflow.html

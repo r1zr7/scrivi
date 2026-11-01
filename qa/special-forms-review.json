@@ -1,0 +1,15 @@
+{
+	"result": "PASS",
+	"version": "1.003",
+	"author": "Alessandro Resch",
+	"sha256": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2",
+	"long_s": {
+		"distinct_from_f": true,
+		"crossbar_absent": true
+	},
+	"kra": {
+		"distinct_from_k": true,
+		"top_font_units": 418,
+		"x_height_font_units": 420
+	}
+}

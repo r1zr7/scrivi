@@ -1,0 +1,60 @@
+AR Scrittura — bozza candidatura Google Fonts
+Autore: Alessandro Resch. Preparata il 1 novembre 2026.
+Stato: non inviata. Repository pubblico creato; CLA e revisione ancora da completare.
+
+Proposed issue title: Add AR Scrittura — naming review requested
+
+Font Project Git Repo URL:
+https://github.com/r1zr7/ar-scrittura
+
+Super short description:
+AR Scrittura is an original upright monoline handwriting typeface by Alessandro
+Resch, with separated letters, compact spacing and restrained flourishes.
+It offers one Regular style, 392 encoded characters and GF Latin Core coverage,
+editable UFO sources, original drawing data and a reproducible fontmake build.
+
+Disclosure of AI assistance:
+The project was developed with ChatGPT/Codex assistance in drawing construction,
+font engineering, build scripts, testing, documentation and release preparation.
+Alessandro Resch directed the design decisions and reviewed visual specimens.
+
+Naming review requested:
+The intended family name is AR Scrittura. AR refers to the author's initials.
+The published onboarding guide excludes copyright-holder initials/acronyms;
+FontBakery's generic naming exception is not project approval. Please advise
+whether an exception is possible or a different catalog name is required.
+No name-policy compliance declaration is made in this draft.
+
+Quality evidence for version 1.003:
+- Google Fonts FontBakery profile: 109 PASS, 7 WARN, 8 INFO, 112 SKIP.
+- Universal profile: 80 PASS, 3 WARN, 3 INFO, 41 SKIP.
+- No FAIL, ERROR or FATAL in the retained reports.
+- 604 release assertions passed, including reproducible TTF/WOFF2 builds.
+- Latest tall-accent corrections were reviewed in large and small samples.
+- These results are from the retained 1.003 reports, not a new QA run today.
+
+Open technical points:
+- 15 encoded codepoints outside the current latin/latin-ext API subsets.
+  Full list: submission/SOTTOINSIEMI.txt in the release package.
+- ARSC vendor ID is proposed, not registered.
+- Residual warnings for side-carons, contour counts, soft hyphen,
+  near-vertical outlines and article images remain documented.
+- Repository URL must replace the current website copyright URL in font/OFL;
+  then increment the font version, rebuild and rerun QA.
+- Confirm the one-style naming policy with the onboarding team.
+- ARTICLE and METADATA are drafts, not final catalog files.
+
+Requirements checklist:
+All personal declarations in the official Add Font template remain unticked
+until the author reviews them. In particular: copyright ownership, absence of
+retail/pro variants, full requirements agreement, future maintenance commitment,
+name uniqueness and naming-policy compliance must not be asserted automatically.
+The Google CLA must be read and signed personally by Alessandro Resch.
+
+Specimen candidate:
+specimen/anteprima.png in the recovered release, to review before submission.
+
+Official sources:
+https://googlefonts.github.io/gf-guide/onboarding.html
+https://github.com/google/fonts/blob/main/.github/ISSUE_TEMPLATE/1_add-font.md
+https://cla.developers.google.com/

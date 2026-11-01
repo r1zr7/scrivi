@@ -1,0 +1,60 @@
+2026-10-28 — font version 1.003 — accents above tall lowercase letters
+Author: Alessandro Resch.
+- Raised accents on U+0125 ĥ, U+021F ȟ and U+01E9 ǩ above the ascenders.
+- Updated compiled GPOS anchors for combining accents on lowercase h/k and variants.
+- Kept the previously corrected l anchors and all advance widths.
+- Only these three encoded outlines changed from 1.002; GSUB/GDEF unchanged.
+- Author accepted 1.002 long s/kra and the latest vowel samples.
+- New tall-accent samples await author visual review.
+
+2026-10-27 — font version 1.002 — special Latin forms
+Author: Alessandro Resch.
+- Replaced the f duplicate at U+017F (long s) with an original crossbar-free form.
+- Replaced the ascender-k duplicate at U+0138 (kra) with an original x-height form.
+- Confirmed these are the only two encoded outlines changed from 1.001.
+- All advances, GPOS, GSUB and GDEF unchanged from 1.001.
+- Previous contour corrections retained; Unicode coverage remains 392 characters.
+- FontBakery Google Fonts: 109 PASS, 0 FAIL/ERROR/FATAL, 7 WARN, 8 INFO, 112 SKIP.
+- FontBakery Universal: 80 PASS, 0 FAIL/ERROR/FATAL, 3 WARN, 3 INFO, 41 SKIP.
+- Author accepted the corrected 1.001 contour samples and the U+00AD browser test.
+- New ſ/ĸ samples await author visual review.
+
+2026-10-27 — font version 1.001 — contour corrections
+Author: Alessandro Resch.
+- Separated the acute in l acute (ĺ) and corrected corresponding mark anchors.
+- Moved the shared combining comma below away from Ș/ș and Ț/ț.
+- Dotted circle now has 12 distinct dots, diameter at least 43 font units.
+- All advance widths and encoded characters retained; approved side carons unchanged.
+- Confirmed only seven encoded outlines differ from 1.000: ĺ Ș ș Ț ț U+0326 ◌.
+- FontBakery Google Fonts: 0 FAIL/ERROR/FATAL, 109 PASS, 7 WARN, 8 INFO, 112 SKIP.
+- FontBakery Universal: 0 FAIL/ERROR/FATAL, 80 PASS, 3 WARN, 3 INFO, 41 SKIP.
+- Manual visual comparison prepared; author review of the corrected samples pending.
+
+2026-10-27 — packaging RC2 for font version 1.000
+Author: Alessandro Resch.
+- Author approved AR Scrittura as the definitive technical family name.
+- Single-family package prepared as a public source repository root.
+- Earlier alternative build removed from this package.
+- Font binaries unchanged from the tested AR Scrittura RC1 candidate.
+- Repository access, source URL update, CLA and catalog review remain pending.
+
+AR-Scrittura — FONTLOG
+
+2026-10-27 — 1.000 — release candidate
+- Extended from 344 to 392 encoded characters; all previous codepoints retained.
+- Complete GF Latin Core; additional auxiliary Latin letters and dotted circle.
+- Original stroke drawings exported to editable UFO, compiled using Fontmake.
+- Simplified outline polygons within 0.6 font units; corrected small oe ligature.
+- Corrected Czech/Slovak side carons and Latvian comma forms; i-ogonek keeps its dot
+  unless an above accent requires the dotless alternate.
+- Added combining comma below, mark anchors on encoded letters and dotted circle,
+  mark-to-mark positioning and extended dotless substitutions.
+- Standardized mathematical operator widths, centered within their advance.
+- Corrected version, code pages, copyright/license metadata, vendor ID, meta table,
+  gasp and unhinted smart dropout instructions. ARSC vendor ID is not registered.
+- 21 kerning pairs retained; ordinary non-mathematical ASCII advances retained.
+- Brand artwork excluded from the wholly OFL font-source package.
+- Added separate, proposed "AR Scrittura" technical-name candidate; no change to public site/theme.
+- Google Fonts name exception/decision and upstream repository still required.
+
+Earlier public preview: 0.1.0.2, 2026-10-26, AR-Scrittura family name.

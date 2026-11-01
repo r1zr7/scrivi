@@ -1,0 +1,34 @@
+AR Scrittura — pubblicazione sul proprio sito
+Autore: Alessandro Resch. 29 ottobre 2026. Font 1.003.
+
+DOWNLOAD
+Caricare AR-Scrittura-1.003-Pubblico.zip sul proprio hosting e collegarlo dalla
+pagina del progetto. Conservare OFL.txt, attribuzioni e avvisi nel pacchetto.
+Il font comprende un solo stile Regular, 392 caratteri codificati, TTF e WOFF2.
+La candidatura a Google Fonts è separata e non è stata inviata né accettata.
+
+USO NELLE PAGINE
+1. Copiare la cartella web/ e OFL.txt, per esempio in /risorse/ar-scrittura/.
+2. Caricare il CSS con questo elemento nel documento HTML:
+<link rel="stylesheet" href="/risorse/ar-scrittura/web/ar-scrittura.css">
+3. Applicare la classe ar-scrittura agli elementi desiderati, per esempio:
+<h1 class="ar-scrittura">Pochi segni, una voce personale.</h1>
+Il CSS cerca il WOFF2 nella propria cartella. Se i file vengono spostati,
+aggiornare il percorso relativo nella dichiarazione @font-face.
+
+WORDPRESS
+Lo ZIP contiene un font, non un tema o plugin. Per l'uso scegliere il caricamento
+locale previsto dal proprio tema oppure integrare il CSS nel tema child.
+Il nome della famiglia è AR Scrittura, con uno spazio. Evitare di sovrascrivere
+file del tema principale per non perdere le modifiche al successivo aggiornamento.
+Le vecchie versioni AR-Tema non vengono aggiornate da questo pacchetto.
+
+ANTEPRIMA
+Estrarre tutto lo ZIP e aprire Anteprima.html: il font è caricato localmente,
+senza Google Fonts, analytics o risorse esterne richieste dall'anteprima.
+È possibile caricare la stessa cartella sull'hosting per una dimostrazione online.
+Il testo modificato nell'anteprima non viene inviato a un server dall'anteprima.
+
+LICENZA
+Il testo completo e vincolante è OFL.txt. Nessun Reserved Font Name dichiarato.
+L'eventuale logo AR e i marchi non sono inclusi tra le risorse del font.

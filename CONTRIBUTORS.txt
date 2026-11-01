@@ -1,0 +1,2 @@
+Alessandro Resch — original design and project direction.
+Development tools include AI-assisted code generation and font QA tooling.

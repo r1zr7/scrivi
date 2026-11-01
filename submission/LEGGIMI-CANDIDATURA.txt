@@ -1,0 +1,15 @@
+Autore: Alessandro Resch. 29 ottobre 2026.
+Materiale in bozza, non inviato. Nessuna ammissione a Google Fonts dichiarata.
+
+METADATA.pb.example: campi iniziali latin/latin-ext/menu, non metadati definitivi.
+Il copyright è quello reale della 1.003; non viene inventato un URL GitHub.
+Prima dell'invio: creare/verificare repository pubblico, aggiornare il copyright
+nel font/OFL, ricompilare una versione successiva e rigenerare i report.
+article/ARTICLE.en_us.html: bozza editoriale in terza persona. Richiede ancora
+il link upstream verificato e revisione del team; eventuali immagini e relative
+licenze saranno preparate secondo le specifiche editoriali del catalogo.
+DESCRIPTION.en_us.html è materiale storico: la guida attuale usa ARTICLE.
+SOTTOINSIEMI.txt: diagnosi completa dei 15 codepoint da discutere con Google.
+Restano inoltre da discutere nome con iniziali AR, eventuale suffisso One,
+vendor ID ARSC non registrato, CLA personale e revisione tipografica/editoriale.
+I WARN automatici restano documentati; non sono stati nascosti o esclusi.

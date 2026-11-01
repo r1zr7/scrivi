@@ -1,0 +1,31 @@
+{
+	"result": "PASS",
+	"author": "Alessandro Resch",
+	"version": "Version 1.003",
+	"checks": [
+		{
+			"character": "ĥ",
+			"vertical_gap_font_units": 65.0
+		},
+		{
+			"character": "ȟ",
+			"vertical_gap_font_units": 65.0
+		},
+		{
+			"character": "ǩ",
+			"vertical_gap_font_units": 65.0
+		}
+	],
+	"sha256": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2",
+	"baseline": {
+		"version": "1.002",
+		"changed_encoded_outlines": [
+			"ĥ",
+			"ǩ",
+			"ȟ"
+		],
+		"all_advances_unchanged": true,
+		"GSUB_GDEF_unchanged": true,
+		"GPOS_updated_for_tall_lowercase_accents": true
+	}
+}

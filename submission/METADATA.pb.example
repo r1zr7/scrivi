@@ -1,0 +1,19 @@
+# Draft by Alessandro Resch, 2026-10-29. Not a submitted catalog entry.
+# Add verified upstream source and catalog date during onboarding.
+name: "AR Scrittura"
+designer: "Alessandro Resch"
+license: "OFL"
+category: "HANDWRITING"
+fonts {
+	name: "AR Scrittura"
+	style: "normal"
+	weight: 400
+	filename: "ARScrittura-Regular.ttf"
+	post_script_name: "ARScrittura-Regular"
+	full_name: "AR Scrittura Regular"
+	copyright: "Copyright 2026 The AR Scrittura Project Authors (https://ar-scrittura.workspace-833185.chatgpt.site/)"
+}
+subsets: "latin"
+subsets: "latin-ext"
+subsets: "menu"
+primary_script: "Latn"
