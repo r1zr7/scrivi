@@ -2,7 +2,7 @@
 
 Author: Alessandro Resch. Updated 2 November 2026.
 
-The official requirements are reproduced in full below. All eleven items are checked. Alessandro Resch personally confirmed the three remaining declarations on 2 November 2026: no retail Pro/extended version, reading and agreement with the contribution requirements, and willingness to maintain the project and participate in onboarding. The personal CLA is being completed and is not yet confirmed signed.
+The official requirements are reproduced in full below. All eleven items are checked. Alessandro Resch personally confirmed the three remaining declarations on 2 November 2026: no retail Pro/extended version, reading and agreement with the contribution requirements, and willingness to maintain the project and participate in onboarding. The author also confirmed submitting the personal Google CLA on 2 November 2026, after receiving the portal confirmation: “Thanks, your CLA has been submitted.”
 
 By opening this issue, I confirm the project meets the following requirements:
 
@@ -24,7 +24,7 @@ Upstream: https://github.com/r1zr7/scrivi . The essential documented layout and 
 
 AI assistance: ChatGPT/Codex assisted drawing construction, font engineering, build scripts, testing, documentation and release preparation. Alessandro Resch directed design choices and reviewed visual specimens.
 
-Current full FontBakery results: Google Fonts 113 PASS, 6 WARN, 7 INFO, 110 SKIP; Universal 80 PASS, 3 WARN, 3 INFO, 41 SKIP; no FAIL/ERROR/FATAL. All residual warnings are documented in qa/WARN-REVIEW.txt. The pending full-compliance declaration must not be inferred from these technical results. The Google CLA remains a separate personal step.
+Current full FontBakery results: Google Fonts 113 PASS, 6 WARN, 7 INFO, 110 SKIP; Universal 80 PASS, 3 WARN, 3 INFO, 41 SKIP; no FAIL/ERROR/FATAL. All residual warnings are documented in qa/WARN-REVIEW.txt. The pending full-compliance declaration must not be inferred from these technical results. The author confirmed that the personal Google CLA was submitted on 2 November 2026.
 
 
 Author confirmation recorded on 2 November 2026: Alessandro Resch explicitly confirmed sole rights ownership and the AI-assistance disclosure. All remaining personal declarations were subsequently confirmed on the same date.
