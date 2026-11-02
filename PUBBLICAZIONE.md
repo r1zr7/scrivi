@@ -37,8 +37,8 @@ stato aggiunto al nome approvato senza indicazioni del team.
 La checklist ufficiale è ripristinata integralmente in submission/CHECKLIST.md.
 Tutte le dichiarazioni personali della checklist sono state confermate
 esplicitamente da Alessandro Resch il 2 novembre 2026: assenza di versioni retail
-più grandi, titolarità, lettura e adesione ai requisiti e impegno alla manutenzione. Il CLA va letto e firmato personalmente; nessuna firma è stata
-eseguita né dichiarata da questo lavoro.
+più grandi, titolarità, lettura e adesione ai requisiti e impegno alla manutenzione. Alessandro Resch ha completato personalmente il CLA e ha confermato il suo invio
+il 2 novembre 2026, riportando il messaggio del portale: “Thanks, your CLA has been submitted.”
 
 ## Licenze
 
@@ -58,4 +58,4 @@ https://googlefonts.github.io/gf-guide/onboarding.html
 https://googlefonts.github.io/gf-guide/article.html
 https://namecheck.fontdata.com/?q=Scrivi
 
-Aggiornamento del 2 novembre 2026: checklist ufficiale interamente confermata dall’autore. CLA personale in compilazione; firma non ancora confermata. Restano la revisione Google e i WARN tecnici già documentati.
+Aggiornamento del 2 novembre 2026: checklist ufficiale interamente confermata dall’autore. CLA personale inviato dall’autore, con conferma del portale riportata in chat. Restano la revisione Google e i WARN tecnici già documentati.
