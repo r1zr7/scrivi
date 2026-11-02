@@ -3,7 +3,7 @@
 	"author": "Alessandro Resch",
 	"font_version": "1.004",
 	"date": "2026-11-02",
-	"status": "technical checks complete; remaining warnings and author declarations pending review",
+	"status": "technical checks complete; all checklist declarations confirmed by author; warnings and catalog review pending",
 	"fontbakery": {
 		"googlefonts": {
 			"(not finished)": 0,
@@ -41,11 +41,16 @@
 	"repository": "https://github.com/r1zr7/scrivi",
 	"google_fonts_issue": "https://github.com/google/fonts/issues/11207",
 	"catalog_admitted": false,
-	"CLA_status": "not verified; author must complete personally",
+	"CLA_status": "in progress, reported by author on 2026-11-02; completion not yet confirmed",
 	"name_check": {
 		"exact_name": "Scrivi",
 		"result": "No exact-match font found",
 		"date": "2026-11-02",
 		"url": "https://namecheck.fontdata.com/?q=Scrivi"
+	},
+	"author_declarations": {
+		"all_confirmed": true,
+		"date": "2026-11-02",
+		"confirmed_by": "Alessandro Resch"
 	}
 }
