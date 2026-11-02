@@ -1,0 +1,17 @@
+{
+	"result": "PASS",
+	"author": "Alessandro Resch",
+	"family": "Scrivi",
+	"version": "1.004",
+	"sha256": "a9413aff10e8f6f14ef370c2b7d779223aec3e185636b1020ca7af9c1a7e6983",
+	"unchanged_from_previous_release": [
+		"outlines",
+		"character_coverage",
+		"widths",
+		"vertical_metrics",
+		"kerning",
+		"mark_positioning",
+		"substitutions",
+		"hinting_program"
+	]
+}

@@ -1,11 +1,11 @@
 # Draft — complete the repository and CLA status before posting
 
-Title: New font proposal: AR Scrittura (AR-Scrittura project)
+Title: New font proposal: Scrivi (Scrivi project)
 
-I would like to propose AR Scrittura, an original monoline handwriting typeface
+I would like to propose Scrivi, an original monoline handwriting typeface
 for names, headings and short messages, designed by Alessandro Resch.
-The project branding is AR-Scrittura. The proposed technical family/menu name is
-AR Scrittura, with the canonical file ARScrittura-Regular.ttf.
+The project branding is Scrivi. The proposed technical family/menu name is
+Scrivi, with the canonical file Scrivi-Regular.ttf.
 
 License: SIL Open Font License 1.1, without Reserved Font Names.
 Styles: one upright Regular style, visually light.
@@ -25,7 +25,7 @@ Before posting this proposal:
 - Update that URL consistently in copyright, OFL, source and font binaries.
 - State the actual CLA status after the rights holder has completed it.
 - Attach/link the reports and specimen for the exact submitted binaries.
-- Technical family name AR Scrittura was approved by Alessandro Resch on 2026-10-27.
+- Technical family name Scrivi was approved by Alessandro Resch on 2026-10-27.
 - Use the current issue form linked from the official onboarding guide.
 
 No proposal has been posted and no acceptance is implied by this draft.

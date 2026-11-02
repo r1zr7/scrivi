@@ -1,0 +1,325 @@
+Scrivi 1.004 — revisione degli avvisi
+Autore: Alessandro Resch. 2 novembre 2026.
+Profili completi, nessuna esclusione o eccezione locale.
+
+alt_caron
+Caron laterali già esaminati nei campioni: il controllo automatico non valuta le forme autonome. Da confermare in revisione tipografica.
+uni010F is decomposed and therefore could not be checked. Please check manually.
+uni013D is decomposed and therefore could not be checked. Please check manually.
+uni013E is decomposed and therefore could not be checked. Please check manually.
+uni0165 is decomposed and therefore could not be checked. Please check manually.
+
+contour_count
+Restano @, § e U+00AD. Le correzioni ai diacritici già verificate sono conservate. Contorni di @ e § intenzionali nei campioni esaminati.
+This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.
+
+The following glyphs do not have the recommended number of contours:
+
+	- Glyph name: uni0040	Contours detected: 1	Expected: 2
+
+	- Glyph name: uni00A7	Contours detected: 3	Expected: 2
+
+	- Glyph name: uni00AD	Contours detected: 1	Expected: 0
+
+	- Glyph name: uni00AD	Contours detected: 1	Expected: 0
+
+
+soft_hyphen
+U+00AD conservato per compatibilità; comportamento nel browser verificato dall’autore nella release precedente. Il WARN sulla presenza non è eliminato.
+This font has a 'Soft Hyphen' character.
+
+vendorspecific.googlefonts.metadata.unreachable_subsetting
+15 codepoint fuori dai set API latin/latin-ext. Il TTF/WOFF2 completo li conserva. Richiede accordo con il team Google, non alfabeti aggiunti per nascondere il WARN.
+The following codepoints supported by the font are not covered by
+    any subsets defined in the font's metadata file, and will never
+    be served. You can solve this by either manually adding additional
+    subset declarations to METADATA.pb, or by editing the glyphset
+    definitions.
+
+ * U+02D8 BREVE: try adding one of: yi, canadian-aboriginal
+ * U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal
+ * U+02DB OGONEK: try adding one of: yi, canadian-aboriginal
+ * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: coptic, math, tifinagh, cherokee
+ * U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic
+ * U+0307 COMBINING DOT ABOVE: try adding one of: old-permic, malayalam, canadian-aboriginal, syriac, tai-le, coptic, tifinagh, duployan, todhri, math, hebrew
+ * U+030A COMBINING RING ABOVE: try adding one of: duployan, syriac
+ * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee
+ * U+030C COMBINING CARON: try adding one of: tai-le, cherokee
+ * U+0326 COMBINING COMMA BELOW: try adding math
+ * U+0327 COMBINING CEDILLA: try adding math
+ * U+0328 COMBINING OGONEK: not included in any glyphset definition
+ * U+1EBC LATIN CAPITAL LETTER E WITH TILDE: try adding vietnamese
+ * U+1EBD LATIN SMALL LETTER E WITH TILDE: try adding vietnamese
+ * U+25CC DOTTED CIRCLE: try adding one of: caucasian-albanian, grantha, bengali, gujarati, miao, tibetan, duployan, yi, takri, phags-pa, bhaiksuki, lao, rejang, armenian, balinese, music, siddham, new-tai-lue, buhid, meetei-mayek, newa, mahajani, soyombo, mongolian, sundanese, javanese, khmer, tifinagh, elbasan, malayalam, canadian-aboriginal, chakma, syloti-nagri, psalter-pahlavi, mende-kikakui, kayah-li, kaithi, mandaic, symbols, telugu, cham, khudawadi, tirhuta, zanabazar-square, bassa-vah, manichaean, buginese, limbu, tai-le, coptic, modi, saurashtra, hanifi-rohingya, syriac, masaram-gondi, kharoshthi, math, adlam, wancho, warang-citi, thai, osage, khojki, tamil, sogdian, thaana, gunjala-gondi, myanmar, hebrew, old-permic, nko, sinhala, devanagari, pahawh-hmong, sharada, tai-viet, tagbanwa, lepcha, tai-tham, hanunoo, kannada, gurmukhi, ahom, batak, dogra, marchen, oriya, brahmi, tagalog
+
+Or you can add the above codepoints to one of the subsets supported by the font: `latin`, `latin-ext`
+
+outline_semi_vertical
+Lievi inclinazioni manoscritte; conservate. Revisione manuale dei campioni documentata, senza pretesa di certificazione di tutti i segmenti.
+The following glyphs have semi-vertical/semi-horizontal lines:
+
+	* uni0021 (U+0021): L<<58.0,200.0>--<57.0,693.0>>
+
+	* uni002A (U+002A): L<<156.0,354.0>--<155.0,473.0>>
+
+	* uni002A (U+002A): L<<181.0,473.0>--<180.0,354.0>>
+
+	* uni002B (U+002B): L<<184.0,81.0>--<183.0,281.0>>
+
+	* uni002D (U+002D): L<<262.0,247.0>--<42.0,246.0>>
+
+	* uni003D (U+003D): L<<364.0,156.0>--<38.0,155.0>>
+
+	* uni003D (U+003D): L<<364.0,352.0>--<38.0,351.0>>
+
+	* uni0042 (U+0042): L<<43.0,0.0>--<44.0,683.0>>
+
+	* uni0044 (U+0044): L<<43.0,0.0>--<44.0,690.0>>
+
+	* uni0046 (U+0046): L<<72.0,352.0>--<69.0,0.0>>
+
+	* uni0046 (U+0046): L<<75.0,660.0>--<73.0,377.0>>
+
+	* uni0047 (U+0047): L<<467.0,297.0>--<468.0,42.0>>
+
+	* uni0048 (U+0048): L<<435.0,0.0>--<432.0,351.0>>
+
+	* uni0048 (U+0048): L<<58.0,345.0>--<55.0,0.0>>
+
+	* uni0049 (U+0049): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni004A (U+004A): L<<279.0,666.0>--<278.0,154.0>>
+
+	* uni004C (U+004C): L<<37.0,-3.0>--<43.0,693.0>>
+
+	* uni0054 (U+0054): L<<218.0,0.0>--<220.0,340.0>>
+
+	* uni0054 (U+0054): L<<245.0,339.0>--<244.0,0.0>>
+
+	* uni005B (U+005B): L<<199.0,-89.0>--<63.0,-90.0>>
+
+	* uni005B (U+005B): L<<51.0,-80.0>--<50.0,749.0>>
+
+	* uni005B (U+005B): L<<76.0,-64.0>--<199.0,-65.0>>
+
+	* uni005D (U+005D): L<<175.0,-90.0>--<39.0,-89.0>>
+
+	* uni005D (U+005D): L<<39.0,-65.0>--<162.0,-64.0>>
+
+	* uni005F (U+005F): L<<388.0,-124.0>--<35.0,-125.0>>
+
+	* uni0062 (U+0062): L<<37.0,-3.0>--<36.0,686.0>>
+
+	* uni0066 (U+0066): L<<84.0,393.0>--<85.0,526.0>>
+
+	* uni0068 (U+0068): L<<37.0,-3.0>--<36.0,686.0>>
+
+	* uni0069 (U+0069): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni006B (U+006B): L<<37.0,-3.0>--<36.0,686.0>>
+
+	* uni006B (U+006B): L<<62.0,157.0>--<61.0,-3.0>>
+
+	* uni0070 (U+0070): L<<36.0,-217.0>--<37.0,381.0>>
+
+	* uni00A1 (U+00A1): L<<58.0,-262.0>--<57.0,189.0>>
+
+	* uni00A6 (U+00A6): L<<51.0,-101.0>--<50.0,231.0>>
+
+	* uni00A6 (U+00A6): L<<51.0,424.0>--<50.0,756.0>>
+
+	* uni00AD (U+00AD): L<<262.0,247.0>--<42.0,246.0>>
+
+	* uni00B1 (U+00B1): L<<184.0,207.0>--<183.0,386.0>>
+
+	* uni00B1 (U+00B1): L<<209.0,386.0>--<208.0,207.0>>
+
+	* uni00B2 (U+00B2): L<<53.0,328.0>--<224.0,327.0>>
+
+	* uni00B5 (U+00B5): L<<43.0,260.0>--<44.0,381.0>>
+
+	* uni00B6 (U+00B6): L<<359.0,-101.0>--<358.0,686.0>>
+
+	* uni00BA (U+00BA): L<<248.0,303.0>--<28.0,302.0>>
+
+	* uni00BD (U+00BD): L<<368.0,13.0>--<514.0,12.0>>
+
+	* uni00CC (U+00CC): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni00CD (U+00CD): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni00CE (U+00CE): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni00CF (U+00CF): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni00D0 (U+00D0): L<<311.0,345.0>--<69.0,344.0>>
+
+	* uni00DC (U+00DC): L<<37.0,204.0>--<36.0,686.0>>
+
+	* uni00DE (U+00DE): L<<44.0,-3.0>--<43.0,693.0>>
+
+	* uni00DE (U+00DE): L<<69.0,174.0>--<68.0,-3.0>>
+
+	* uni00EC (U+00EC): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni00ED (U+00ED): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni00EE (U+00EE): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni00F1 (U+00F1): L<<36.0,0.0>--<37.0,374.0>>
+
+	* uni00F1 (U+00F1): L<<62.0,208.0>--<61.0,-3.0>>
+
+	* uni00FE (U+00FE): L<<37.0,-220.0>--<36.0,686.0>>
+
+	* uni0100 (U+0100): L<<353.0,800.0>--<168.0,799.0>>
+
+	* uni0101 (U+0101): L<<283.0,548.0>--<98.0,547.0>>
+
+	* uni010E (U+010E): L<<43.0,0.0>--<44.0,690.0>>
+
+	* uni0110 (U+0110): L<<409.0,345.0>--<69.0,344.0>>
+
+	* uni0112 (U+0112): L<<308.0,800.0>--<122.0,799.0>>
+
+	* uni0113 (U+0113): L<<276.0,548.0>--<91.0,547.0>>
+
+	* uni011C (U+011C): L<<467.0,297.0>--<468.0,42.0>>
+
+	* uni011E (U+011E): L<<467.0,297.0>--<468.0,42.0>>
+
+	* uni0120 (U+0120): L<<467.0,297.0>--<468.0,42.0>>
+
+	* uni0122 (U+0122): L<<467.0,297.0>--<468.0,42.0>>
+
+	* uni0124 (U+0124): L<<435.0,0.0>--<432.0,351.0>>
+
+	* uni0124 (U+0124): L<<58.0,345.0>--<55.0,0.0>>
+
+	* uni0126 (U+0126): L<<35.0,559.0>--<36.0,693.0>>
+
+	* uni0126 (U+0126): L<<435.0,0.0>--<432.0,351.0>>
+
+	* uni0126 (U+0126): L<<454.0,693.0>--<455.0,559.0>>
+
+	* uni0126 (U+0126): L<<58.0,345.0>--<55.0,0.0>>
+
+	* uni0126 (U+0126): L<<61.0,696.0>--<60.0,559.0>>
+
+	* uni0127 (U+0127): L<<220.0,527.0>--<62.0,526.0>>
+
+	* uni0127 (U+0127): L<<61.0,689.0>--<62.0,552.0>>
+
+	* uni0127 (U+0127): L<<62.0,552.0>--<220.0,551.0>>
+
+	* uni0128 (U+0128): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni0129 (U+0129): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni012A (U+012A): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni012A (U+012A): L<<210.0,800.0>--<24.0,799.0>>
+
+	* uni012B (U+012B): L<<168.0,548.0>--<-18.0,547.0>>
+
+	* uni012B (U+012B): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni012C (U+012C): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni012D (U+012D): L<<58.0,-3.0>--<57.0,371.0>>
+
+	* uni0130 (U+0130): L<<196.0,-13.0>--<39.0,-12.0>>
+
+	* uni0134 (U+0134): L<<279.0,666.0>--<278.0,154.0>>
+
+	* uni0137 (U+0137): L<<62.0,157.0>--<61.0,-3.0>>
+
+	* uni0139 (U+0139): L<<37.0,-3.0>--<43.0,693.0>>
+
+	* uni013B (U+013B): L<<37.0,-3.0>--<43.0,693.0>>
+
+	* uni013D (U+013D): L<<37.0,-3.0>--<43.0,693.0>>
+
+	* uni013F (U+013F): L<<37.0,-3.0>--<43.0,693.0>>
+
+	* uni0141 (U+0141): L<<37.0,-3.0>--<39.0,247.0>>
+
+	* uni0141 (U+0141): L<<64.0,263.0>--<62.0,13.0>>
+
+	* uni0142 (U+0142): L<<47.0,338.0>--<48.0,464.0>>
+
+	* uni0144 (U+0144): L<<36.0,0.0>--<37.0,374.0>>
+
+	* uni0144 (U+0144): L<<62.0,208.0>--<61.0,-3.0>>
+
+	* uni0146 (U+0146): L<<36.0,0.0>--<37.0,374.0>>
+
+	* uni0146 (U+0146): L<<62.0,208.0>--<61.0,-3.0>>
+
+	* uni0148 (U+0148): L<<36.0,0.0>--<37.0,374.0>>
+
+	* uni0148 (U+0148): L<<62.0,208.0>--<61.0,-3.0>>
+
+	* uni0149 (U+0149): L<<141.0,0.0>--<142.0,374.0>>
+
+	* uni0149 (U+0149): L<<167.0,208.0>--<166.0,-3.0>>
+
+	* uni014C (U+014C): L<<353.0,800.0>--<168.0,799.0>>
+
+	* uni014D (U+014D): L<<280.0,548.0>--<94.0,547.0>>
+
+	* uni0152 (U+0152): L<<476.0,179.0>--<475.0,13.0>>
+
+	* uni0152 (U+0152): L<<481.0,660.0>--<480.0,485.0>>
+
+	* uni0162 (U+0162): L<<218.0,0.0>--<220.0,340.0>>
+
+	* uni0162 (U+0162): L<<245.0,339.0>--<244.0,11.0>>
+
+	* uni0164 (U+0164): L<<218.0,0.0>--<220.0,340.0>>
+
+	* uni0164 (U+0164): L<<245.0,339.0>--<244.0,0.0>>
+
+	* uni0166 (U+0166): L<<218.0,0.0>--<219.0,213.0>>
+
+	* uni0166 (U+0166): L<<247.0,440.0>--<402.0,439.0>>
+
+	* uni0166 (U+0166): L<<402.0,415.0>--<246.0,414.0>>
+
+	* uni016A (U+016A): L<<339.0,800.0>--<154.0,799.0>>
+
+	* uni016B (U+016B): L<<276.0,548.0>--<91.0,547.0>>
+
+	* uni0170 (U+0170): L<<37.0,204.0>--<36.0,686.0>>
+
+	* uni01E4 (U+01E4): L<<255.0,380.0>--<62.0,379.0>>
+
+	* uni01E5 (U+01E5): L<<234.0,254.0>--<63.0,253.0>>
+
+	* uni01E5 (U+01E5): L<<70.0,279.0>--<234.0,278.0>>
+
+	* uni01E6 (U+01E6): L<<467.0,297.0>--<468.0,42.0>>
+
+	* uni01E9 (U+01E9): L<<62.0,157.0>--<61.0,-3.0>>
+
+	* uni021A (U+021A): L<<218.0,0.0>--<220.0,340.0>>
+
+	* uni021A (U+021A): L<<245.0,339.0>--<244.0,0.0>>
+
+	* uni021E (U+021E): L<<435.0,0.0>--<432.0,351.0>>
+
+	* uni021E (U+021E): L<<58.0,345.0>--<55.0,0.0>>
+
+	* uni2013 (U+2013): L<<451.0,247.0>--<42.0,246.0>>
+
+	* uni2014 (U+2014): L<<675.0,247.0>--<42.0,246.0>>
+
+	* uni20AC (U+20AC): L<<339.0,387.0>--<99.0,386.0>>
+
+	* uni2212 (U+2212): L<<367.0,282.0>--<28.0,281.0>>
+
+vendorspecific.googlefonts.vendor_id
+ARSC resta un ID proposto, non registrato presso Microsoft. Non è il nome della famiglia e non attribuisce al font la proprietà di un altro produttore.
+OS/2 VendorID value 'ARSC' is not yet recognized. If you registered it recently, then it's safe to ignore this warning message. Otherwise, you should set it to your own unique 4 character code, and register it with Microsoft at https://www.microsoft.com/typography/links/vendorlist.aspx
+
+

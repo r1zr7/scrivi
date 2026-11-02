@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
 from verify_and_preview import ui_font
 r=Path(__file__).resolve().parents[1]
-f=ImageFont.truetype(str(r/'fonts/ARScrittura-Regular.ttf'),85)
+f=ImageFont.truetype(str(r/'fonts/ttf/Scrivi-Regular.ttf'),85)
 # System UI font for captions; not copied into the font distribution.
 ui=ui_font(23)
 im=Image.new('RGB',(1600,1600),'#f6f4ef');d=ImageDraw.Draw(im)

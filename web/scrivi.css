@@ -1,13 +1,13 @@
 /* Copyright (c) 2026 Alessandro Resch. SIL OFL 1.1. */
 @font-face {
-	font-family: 'AR Scrittura';
-	src: url('./AR-Scrittura-Regular.woff2') format('woff2');
+	font-family: 'Scrivi';
+	src: url('../fonts/webfonts/Scrivi-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
-.ar-scrittura {
-	font-family: 'AR Scrittura', cursive;
+.scrivi {
+	font-family: 'Scrivi', cursive;
 	font-weight: 400;
 	font-style: normal;
 	font-synthesis: none;

@@ -1,3 +1,13 @@
+2026-11-02 — font version 1.004 — Scrivi
+Author: Alessandro Resch.
+- Renamed family, full name and PostScript name to Scrivi / Scrivi Regular / Scrivi-Regular.
+- Updated font/OFL copyright URL to https://github.com/r1zr7/scrivi.
+- Preserved every outline, advance, character, vertical metric and shaping table from 1.003.
+- Adopted UFR essentials: fonts/ttf, fonts/webfonts, sources/build.sh, root requirements,
+  README image and documentation/article. Build remains the original fontmake pipeline.
+- Updated offline demo, public download page, article and submission materials.
+- Kept historic records under documentation/history. The previous name was AR Scrittura.
+
 2026-10-28 — font version 1.003 — accents above tall lowercase letters
 Author: Alessandro Resch.
 - Raised accents on U+0125 ĥ, U+021F ȟ and U+01E9 ǩ above the ascenders.

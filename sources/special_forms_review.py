@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
 	parser=argparse.ArgumentParser();parser.add_argument('--baseline',type=Path);args=parser.parse_args()
-	path=ROOT/'fonts/ARScrittura-Regular.ttf';f=TTFont(path);cmap=f.getBestCmap();glyf=f['glyf']
+	path=ROOT/'fonts/ttf/Scrivi-Regular.ttf';f=TTFont(path);cmap=f.getBestCmap();glyf=f['glyf']
 	longs=glyf[cmap[ord('ſ')]];letter_f=glyf[cmap[ord('f')]]
 	kra=glyf[cmap[ord('ĸ')]];letter_k=glyf[cmap[ord('k')]]
 	assert longs.compile(glyf)!=letter_f.compile(glyf),'Long s must not duplicate f'
@@ -21,7 +21,7 @@ def main():
 	points,_,_=longs.getCoordinates(glyf)
 	section=Polygon(points).intersection(LineString([(-1000,385),(2000,385)]))
 	assert not section.is_empty and section.bounds[2]-section.bounds[0]<=30,section
-	result={'result':'PASS','version':'1.003','author':'Alessandro Resch','sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'long_s':{'distinct_from_f':True,'crossbar_absent':True},'kra':{'distinct_from_k':True,'top_font_units':kra.yMax,'x_height_font_units':f['OS/2'].sxHeight}}
+	result={'result':'PASS','version':'1.004','author':'Alessandro Resch','sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'long_s':{'distinct_from_f':True,'crossbar_absent':True},'kra':{'distinct_from_k':True,'top_font_units':kra.yMax,'x_height_font_units':f['OS/2'].sxHeight}}
 	if args.baseline:
 		old=TTFont(args.baseline);assert cmap==old.getBestCmap()
 		changed=[chr(cp) for cp,gn in cmap.items() if glyf[gn].compile(glyf)!=old['glyf'][gn].compile(old['glyf'])]

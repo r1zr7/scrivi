@@ -1,19 +1,15 @@
-AR Scrittura
-Autore: Alessandro Resch. Versione 1.003.
+Scrivi
+Autore: Alessandro Resch. Versione 1.004.
 
 Pochi segni, una voce personale.
 
-AR Scrittura è un carattere manoscritto essenziale: lettere separate, tratto
-sottile e pochi riccioli. Nasce per nomi, titoli e messaggi brevi, quando serve
-un segno personale senza appesantire la pagina.
+Scrivi è un carattere manoscritto essenziale: lettere separate, tratto sottile e
+pochi riccioli. Nasce per nomi, titoli e messaggi brevi, quando serve un segno
+personale senza appesantire la pagina.
 
-Il pacchetto comprende il font installabile TTF, il formato web WOFF2, i sorgenti
-modificabili e un'anteprima da provare anche offline. Un solo stile Regular,
-con 392 caratteri, lettere latine accentate e segni combinanti.
+Il pacchetto comprende il TTF da installare sul computer, il WOFF2 per il web,
+i sorgenti modificabili e un'anteprima da provare anche offline. Un solo stile
+Regular, con 392 caratteri, lettere latine accentate e segni combinanti.
 
-Distribuito con licenza SIL Open Font License 1.1. Il testo completo della licenza
-è incluso nel download. Il font è disponibile direttamente da questo sito;
-non è ancora presente su Google Fonts.
-
-Pulsante suggerito: Scarica AR Scrittura 1.003
-Link suggerito: Apri l'anteprima
+Il font è distribuito con licenza SIL Open Font License 1.1, inclusa nel download.
+La candidatura Google Fonts è in corso; il font non è ancora disponibile nel catalogo.

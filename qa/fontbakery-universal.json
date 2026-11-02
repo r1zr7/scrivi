@@ -13,7 +13,7 @@
                     "description": "Is the CFF subr/gsubr call depth > 10?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/cff_call_depth>",
@@ -97,7 +97,7 @@
                     "description": "Font follows the family naming recommendations?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/family_naming_recommendations>",
@@ -181,7 +181,7 @@
                     "description": "Checking font version fields (head and name table).",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/font_version>",
@@ -213,7 +213,7 @@
                     "description": "Checking OS/2 fsSelection value.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/fsselection>",
@@ -246,7 +246,7 @@
                     "description": "Axes and named instances fall within correct ranges?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/fvar/axis_ranges_correct>",
@@ -280,7 +280,7 @@
                     "description": "Axes and named instances fall within correct ranges?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/fvar/regular_coords_correct>",
@@ -313,7 +313,7 @@
                     "description": "Check mark characters are in GDEF mark glyph class.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/gdef_mark_chars>",
@@ -345,7 +345,7 @@
                     "description": "Check GDEF mark glyph class doesn't have characters that are not marks.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/gdef_non_mark_chars>",
@@ -377,7 +377,7 @@
                     "description": "Check glyphs in mark glyph class are non-spacing.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/gdef_spacing_marks>",
@@ -409,7 +409,7 @@
                     "description": "Check glyphs do not have duplicate components which have the same x,y coordinates.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/glyf_non_transformed_duplicate_components>",
@@ -441,7 +441,7 @@
                     "description": "Is there any unused data at the end of the glyf table?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/glyf_unused_data>",
@@ -470,19 +470,13 @@
                     "severity": null
                 },
                 {
-                    "description": "Check hhea.caretSlopeRise and hhea.caretSlopeRun",
+                    "description": "Check that OS/2.fsSelection bold & italic settings are unique for each NameID1",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
-                        "<FontBakeryCheck:opentype/caret_slope>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
+                        "<FontBakeryCheck:opentype/family/bold_italic_unique_for_nameid1>",
+                        []
                     ],
                     "logs": [
                         {
@@ -493,11 +487,11 @@
                             "status": "PASS"
                         }
                     ],
-                    "module": "opentype.caret_slope",
+                    "module": "opentype.family.bold_italic_unique_for_nameid1",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3670"
+                        "https://github.com/fonttools/fontbakery/pull/2388"
                     ],
-                    "rationale": "\n        Checks whether hhea.caretSlopeRise and hhea.caretSlopeRun\n        match with post.italicAngle.\n\n        For Upright fonts, you can set hhea.caretSlopeRise to 1\n        and hhea.caretSlopeRun to 0.\n\n        For Italic fonts, you can set hhea.caretSlopeRise to head.unitsPerEm\n        and calculate hhea.caretSlopeRun like this:\n        round(math.tan(\n          math.radians(-1 * font[\"post\"].italicAngle)) * font[\"head\"].unitsPerEm)\n\n        This check allows for a 0.1\u00b0 rounding difference between the Italic angle\n        as calculated by the caret slope and post.italicAngle\n    ",
+                    "rationale": "\n        Per the OpenType spec: name ID 1 'is used in combination with Font Subfamily\n        name (name ID 2), and should be shared among at most four fonts that differ\n        only in weight or style.\n\n        This four-way distinction should also be reflected in the OS/2.fsSelection\n        field, using bits 0 and 5.\n    ",
                     "result": "PASS",
                     "severity": null
                 },
@@ -505,7 +499,7 @@
                     "description": "Is there a usable \"kern\" table declared in the font?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/kern_table>",
@@ -539,7 +533,7 @@
                     "description": "Does the font have any invalid feature tags?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/layout_valid_feature_tags>",
@@ -571,7 +565,7 @@
                     "description": "Does the font have any invalid language tags?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/layout_valid_language_tags>",
@@ -603,7 +597,7 @@
                     "description": "Does the font have any invalid script tags?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/layout_valid_script_tags>",
@@ -635,7 +629,7 @@
                     "description": "Does the number of glyphs in the loca table match the maxp table?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/loca/maxp_num_glyphs>",
@@ -667,7 +661,7 @@
                     "description": "Checking head.macStyle value.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/mac_style>",
@@ -706,7 +700,7 @@
                     "description": "MaxAdvanceWidth is consistent with values in the Hmtx and Hhea tables?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/maxadvancewidth>",
@@ -738,7 +732,7 @@
                     "description": "Checking correctness of monospaced metadata.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/monospace>",
@@ -770,7 +764,7 @@
                     "description": "Check name table for empty records.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/name/empty_records>",
@@ -802,7 +796,7 @@
                     "description": "Does full font name begin with the font family name?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/name/match_familyname_fullfont>",
@@ -834,7 +828,7 @@
                     "description": "Name table ID 6 (PostScript name) must be consistent across platforms.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/name/postscript_name_consistency>",
@@ -866,7 +860,7 @@
                     "description": "CFF table FontName must match name table ID 6 (PostScript name).",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/name/postscript_vs_cff>",
@@ -895,13 +889,13 @@
                     "severity": null
                 },
                 {
-                    "description": "Is the CFF2 subr/gsubr call depth > 10?",
+                    "description": "Check code page character ranges",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
-                        "<FontBakeryCheck:opentype/cff2_call_depth>",
+                        "<FontBakeryCheck:opentype/code_pages>",
                         [
                             [
                                 "font",
@@ -912,25 +906,25 @@
                     "logs": [
                         {
                             "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_cff2"
+                                "code": "ok",
+                                "message": "All looks good!"
                             },
-                            "status": "SKIP"
+                            "status": "PASS"
                         }
                     ],
-                    "module": "opentype.cff2_call_depth",
+                    "module": "opentype.code_pages",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/pull/2425"
+                        "https://github.com/fonttools/fontbakery/issues/2474"
                     ],
-                    "rationale": "\n        Per \"The CFF2 CharString Format\", the \"Subr nesting, stack limit\" is 10.\n    ",
-                    "result": "SKIP",
+                    "rationale": "\n        At least some programs (such as Word and Sublime Text) under Windows 7\n        do not recognize fonts unless code page bits are properly set on the\n        ulCodePageRange1 (and/or ulCodePageRange2) fields of the OS/2 table.\n\n        More specifically, the fonts are selectable in the font menu, but whichever\n        Windows API these applications use considers them unsuitable for any\n        character set, so anything set in these fonts is rendered with Arial as a\n        fallback font.\n\n        This check currently does not identify which code pages should be set.\n        Auto-detecting coverage is not trivial since the OpenType specification\n        leaves the interpretation of whether a given code page is \"functional\"\n        or not open to the font developer to decide.\n\n        So here we simply detect as a FAIL when a given font has no code page\n        declared at all.\n    ",
+                    "result": "PASS",
                     "severity": null
                 },
                 {
                     "description": "PostScript name follows OpenType specification requirements?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/postscript_name>",
@@ -962,7 +956,7 @@
                     "description": "Font has correct post table version?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/post_table_version>",
@@ -997,7 +991,7 @@
                     "description": "Checking direction of slnt axis angles.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/slant_direction>",
@@ -1057,7 +1051,7 @@
                     "description": "Checking unitsPerEm value is reasonable.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/unitsperem>",
@@ -1089,7 +1083,7 @@
                     "description": "Are there unwanted Apple tables?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/unwanted_aat_tables>",
@@ -1121,7 +1115,7 @@
                     "description": "Validates that all of the instance records in a given font have distinct data.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/varfont/distinct_instance_records>",
@@ -1179,7 +1173,7 @@
                     "description": "Validate foundry-defined design-variation axis tag names.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/varfont/foundry_defined_tag_name>",
@@ -1211,7 +1205,7 @@
                     "description": "Validates that all of the instance records in a given font have the same size.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/varfont/same_size_instance_records>",
@@ -1243,7 +1237,7 @@
                     "description": "All fvar axes have a correspondent Axis Record on STAT table?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/varfont/STAT_axis_record_for_each_axis>",
@@ -1275,7 +1269,7 @@
                     "description": "Validates subfamilyNameID and postScriptNameID for the default instance record",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/varfont/valid_default_instance_nameids>",
@@ -1307,7 +1301,7 @@
                     "description": "Validates that all of the name IDs in an instance record are within the correct range",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/varfont/valid_nameids>",
@@ -1340,7 +1334,7 @@
                     "description": "Checking OS/2 achVendID against configuration.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/vendor_id>",
@@ -1372,7 +1366,7 @@
                     "description": "Checking if OS/2 usWeightClass matches fvar.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/weight_class_fvar>",
@@ -1404,7 +1398,7 @@
                     "description": "Check if OS/2 xAvgCharWidth is correct.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/xavgcharwidth>",
@@ -1433,10 +1427,42 @@
                     "severity": null
                 },
                 {
+                    "description": "Check hhea.caretSlopeRise and hhea.caretSlopeRun",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: OpenType Specification Checks>",
+                        "<FontBakeryCheck:opentype/caret_slope>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "opentype.caret_slope",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3670"
+                    ],
+                    "rationale": "\n        Checks whether hhea.caretSlopeRise and hhea.caretSlopeRun\n        match with post.italicAngle.\n\n        For Upright fonts, you can set hhea.caretSlopeRise to 1\n        and hhea.caretSlopeRun to 0.\n\n        For Italic fonts, you can set hhea.caretSlopeRise to head.unitsPerEm\n        and calculate hhea.caretSlopeRun like this:\n        round(math.tan(\n          math.radians(-1 * font[\"post\"].italicAngle)) * font[\"head\"].unitsPerEm)\n\n        This check allows for a 0.1\u00b0 rounding difference between the Italic angle\n        as calculated by the caret slope and post.italicAngle\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
                     "description": "The font should not need a DSIG table anymore.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/dsig>",
@@ -1466,74 +1492,10 @@
                     "severity": null
                 },
                 {
-                    "description": "Does the font use deprecated CFF operators or operations?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: OpenType Specification Checks>",
-                        "<FontBakeryCheck:opentype/cff_deprecated_operators>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_cff"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "opentype.cff_deprecated_operators",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/pull/3033"
-                    ],
-                    "rationale": "\n        The 'dotsection' operator and the use of 'endchar' to build accented characters\n        from the Adobe Standard Encoding Character Set (\"seac\") are deprecated in CFF.\n        Adobe recommends repairing any fonts that use these, especially endchar-as-seac,\n        because a rendering issue was discovered in Microsoft Word with a font that\n        makes use of this operation. The check treats that usage as a FAIL.\n        There are no known ill effects of using dotsection, so that check is a WARN.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Check code page character ranges",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: OpenType Specification Checks>",
-                        "<FontBakeryCheck:opentype/code_pages>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "opentype.code_pages",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/2474"
-                    ],
-                    "rationale": "\n        At least some programs (such as Word and Sublime Text) under Windows 7\n        do not recognize fonts unless code page bits are properly set on the\n        ulCodePageRange1 (and/or ulCodePageRange2) fields of the OS/2 table.\n\n        More specifically, the fonts are selectable in the font menu, but whichever\n        Windows API these applications use considers them unsuitable for any\n        character set, so anything set in these fonts is rendered with Arial as a\n        fallback font.\n\n        This check currently does not identify which code pages should be set.\n        Auto-detecting coverage is not trivial since the OpenType specification\n        leaves the interpretation of whether a given code page is \"functional\"\n        or not open to the font developer to decide.\n\n        So here we simply detect as a FAIL when a given font has no code page\n        declared at all.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
                     "description": "Check for points out of bounds.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/points_out_of_bounds>",
@@ -1562,12 +1524,12 @@
                     "severity": null
                 },
                 {
-                    "description": "Check that OS/2.fsSelection bold & italic settings are unique for each NameID1",
+                    "description": "Verify that family names in the name table are consistent across all fonts in the family. Checks Typographic Family name (nameID 16) if present, otherwise uses Font Family name (nameID 1)",
                     "documentation": null,
                     "experimental": false,
                     "key": [
                         "<Section: OpenType Specification Checks>",
-                        "<FontBakeryCheck:opentype/family/bold_italic_unique_for_nameid1>",
+                        "<FontBakeryCheck:opentype/family/consistent_family_name>",
                         []
                     ],
                     "logs": [
@@ -1579,19 +1541,51 @@
                             "status": "PASS"
                         }
                     ],
-                    "module": "opentype.family.bold_italic_unique_for_nameid1",
+                    "module": "opentype.family.consistent_family_name",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/pull/2388"
+                        "https://github.com/fonttools/fontbakery/issues/4112"
                     ],
-                    "rationale": "\n        Per the OpenType spec: name ID 1 'is used in combination with Font Subfamily\n        name (name ID 2), and should be shared among at most four fonts that differ\n        only in weight or style.\n\n        This four-way distinction should also be reflected in the OS/2.fsSelection\n        field, using bits 0 and 5.\n    ",
+                    "rationale": "\n        Per the OpenType spec:\n\n            * \"...many existing applications that use this pair of names assume that a\n              Font Family name is shared by at most four fonts that form a font\n              style-linking group\"\n\n            * \"For extended typographic families that includes fonts other than the\n              four basic styles(regular, italic, bold, bold italic), it is strongly\n              recommended that name IDs 16 and 17 be used in fonts to create an\n              extended, typographic grouping.\"\n\n            * \"If name ID 16 is absent, then name ID 1 is considered to be the\n              typographic family name.\"\n\n        https://learn.microsoft.com/en-us/typography/opentype/spec/name\n\n        Fonts within a font family all must have consistent names\n        in the Typographic Family name (nameID 16)\n        or Font Family name (nameID 1), depending on which it uses.\n\n        Inconsistent font/typographic family names across fonts in a family\n        can result in unexpected behaviors, such as broken style linking.\n    ",
                     "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Is the CFF2 subr/gsubr call depth > 10?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: OpenType Specification Checks>",
+                        "<FontBakeryCheck:opentype/cff2_call_depth>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_cff2"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "opentype.cff2_call_depth",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/pull/2425"
+                    ],
+                    "rationale": "\n        Per \"The CFF2 CharString Format\", the \"Subr nesting, stack limit\" is 10.\n    ",
+                    "result": "SKIP",
                     "severity": null
                 },
                 {
                     "description": "Does the font's CFF table top dict strings fit into the ASCII range?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/cff_ascii_strings>",
@@ -1620,10 +1614,42 @@
                     "severity": null
                 },
                 {
+                    "description": "Does the font use deprecated CFF operators or operations?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: OpenType Specification Checks>",
+                        "<FontBakeryCheck:opentype/cff_deprecated_operators>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_cff"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "opentype.cff_deprecated_operators",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/pull/3033"
+                    ],
+                    "rationale": "\n        The 'dotsection' operator and the use of 'endchar' to build accented characters\n        from the Adobe Standard Encoding Character Set (\"seac\") are deprecated in CFF.\n        Adobe recommends repairing any fonts that use these, especially endchar-as-seac,\n        because a rendering issue was discovered in Microsoft Word with a font that\n        makes use of this operation. The check treats that usage as a FAIL.\n        There are no known ill effects of using dotsection, so that check is a WARN.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
                     "description": "Checking post.italicAngle value.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: OpenType Specification Checks>",
                         "<FontBakeryCheck:opentype/italic_angle>",
@@ -1650,32 +1676,6 @@
                     "rationale": "\n        The 'post' table italicAngle property should be a reasonable amount, likely\n        not more than 30\u00b0. Note that in the OpenType specification, the value is\n        negative for a rightward lean.\n\n        https://docs.microsoft.com/en-us/typography/opentype/spec/post\n    ",
                     "result": "PASS",
                     "severity": null
-                },
-                {
-                    "description": "Verify that family names in the name table are consistent across all fonts in the family. Checks Typographic Family name (nameID 16) if present, otherwise uses Font Family name (nameID 1)",
-                    "documentation": null,
-                    "experimental": false,
-                    "key": [
-                        "<Section: OpenType Specification Checks>",
-                        "<FontBakeryCheck:opentype/family/consistent_family_name>",
-                        []
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "opentype.family.consistent_family_name",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4112"
-                    ],
-                    "rationale": "\n        Per the OpenType spec:\n\n            * \"...many existing applications that use this pair of names assume that a\n              Font Family name is shared by at most four fonts that form a font\n              style-linking group\"\n\n            * \"For extended typographic families that includes fonts other than the\n              four basic styles(regular, italic, bold, bold italic), it is strongly\n              recommended that name IDs 16 and 17 be used in fonts to create an\n              extended, typographic grouping.\"\n\n            * \"If name ID 16 is absent, then name ID 1 is considered to be the\n              typographic family name.\"\n\n        https://learn.microsoft.com/en-us/typography/opentype/spec/name\n\n        Fonts within a font family all must have consistent names\n        in the Typographic Family name (nameID 16)\n        or Font Family name (nameID 1), depending on which it uses.\n\n        Inconsistent font/typographic family names across fonts in a family\n        can result in unexpected behaviors, such as broken style linking.\n    ",
-                    "result": "PASS",
-                    "severity": null
                 }
             ],
             "key": [
@@ -1691,87 +1691,10 @@
         {
             "checks": [
                 {
-                    "description": "List all superfamily filepaths",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Superfamily Checks>",
-                        "<FontBakeryCheck:superfamily/list>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "family-path",
-                                "message": "ar-scrittura-upstream/fonts"
-                            },
-                            "status": "INFO"
-                        }
-                    ],
-                    "module": "superfamily.list",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/1487"
-                    ],
-                    "rationale": "\n        This is a merely informative check that lists all sibling families\n        detected by fontbakery.\n\n        Only the fontfiles in these directories will be considered in\n        superfamily-level checks.\n    ",
-                    "result": "INFO",
-                    "severity": null
-                },
-                {
-                    "description": "Each font in set of sibling families must have the same set of vertical metrics values.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Superfamily Checks>",
-                        "<FontBakeryCheck:superfamily/vertical_metrics>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Sibling families were not detected."
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "superfamily.vertical_metrics",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/1487"
-                    ],
-                    "rationale": "\n        We may want all fonts within a super-family (all sibling families) to have\n        the same vertical metrics so their line spacing is consistent\n        across the super-family.\n\n        This is an experimental extended version of the\n        `family/vertical_metrics` check and for now it will only result in WARNs.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                }
-            ],
-            "key": [
-                "Superfamily Checks",
-                null,
-                null
-            ],
-            "result": {
-                "INFO": 1,
-                "SKIP": 1
-            }
-        },
-        {
-            "checks": [
-                {
                     "description": "Check accent of Lcaron, dcaron, lcaron, tcaron",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:alt_caron>",
@@ -1831,7 +1754,7 @@
                     "description": "Check that Arabic spacing symbols U+FBB2\u2013FBC1 aren't classified as marks.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:arabic_spacing_symbols>",
@@ -1860,10 +1783,42 @@
                     "severity": 4
                 },
                 {
+                    "description": "Check that glyph for U+0674 ARABIC LETTER HIGH HAMZA is not a mark.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:arabic_high_hamza>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "glyphs-missing",
+                                "message": "This check will only run on fonts that have U+0674 glyph"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "arabic_high_hamza",
+                    "proposal": [
+                        "https://github.com/googlefonts/fontbakery/issues/4290"
+                    ],
+                    "rationale": "\n        Many fonts incorrectly treat ARABIC LETTER HIGH HAMZA (U+0674) as a variant of\n        ARABIC HAMZA ABOVE (U+0654) and make it a combining mark of the same size.\n\n        But U+0674 is a base letter and should be a variant of ARABIC LETTER HAMZA\n        (U+0621) but raised slightly above baseline.\n\n        Not doing so effectively makes the font useless for Jawi and\n        possibly Kazakh as well.\n    ",
+                    "result": "SKIP",
+                    "severity": 4
+                },
+                {
                     "description": "Check base characters have non-zero advance width.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:base_has_width>",
@@ -1895,7 +1850,7 @@
                     "description": "Ensure the font supports case swapping for all its glyphs.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:case_mapping>",
@@ -1924,42 +1879,10 @@
                     "severity": 10
                 },
                 {
-                    "description": "Check that glyph for U+0674 ARABIC LETTER HIGH HAMZA is not a mark.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:arabic_high_hamza>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "glyphs-missing",
-                                "message": "This check will only run on fonts that have U+0674 glyph"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "arabic_high_hamza",
-                    "proposal": [
-                        "https://github.com/googlefonts/fontbakery/issues/4290"
-                    ],
-                    "rationale": "\n        Many fonts incorrectly treat ARABIC LETTER HIGH HAMZA (U+0674) as a variant of\n        ARABIC HAMZA ABOVE (U+0654) and make it a combining mark of the same size.\n\n        But U+0674 is a base letter and should be a variant of ARABIC LETTER HAMZA\n        (U+0621) but raised slightly above baseline.\n\n        Not doing so effectively makes the font useless for Jawi and\n        possibly Kazakh as well.\n    ",
-                    "result": "SKIP",
-                    "severity": 4
-                },
-                {
                     "description": "Any CJK font should contain at least a minimal set of 150 CJK characters.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:cjk_not_enough_glyphs>",
@@ -1991,7 +1914,7 @@
                     "description": "Check that format 12 cmap subtables are correctly constituted.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:cmap/format_12>",
@@ -2023,7 +1946,7 @@
                     "description": "Color layers should have a minimum brightness.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:color_cpal_brightness>",
@@ -2055,7 +1978,7 @@
                     "description": "Check if each glyph has the recommended amount of contours.",
                     "documentation": "This check is useful to assure glyphs aren't incorrectly constructed.\n\nThe desired_glyph_data module contains the 'recommended' countour count\nfor encoded glyphs. The contour counts are derived from fonts which were\nchosen for their quality and unique design decisions for particular glyphs.\n\nIn the future, additional glyph data can be included. A good addition would\nbe the 'recommended' anchor counts for each glyph.",
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:contour_count>",
@@ -2087,7 +2010,7 @@
                     "description": "Does the font contain chws and vchw features?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:cjk_chws_feature>",
@@ -2116,42 +2039,10 @@
                     "severity": null
                 },
                 {
-                    "description": "All name entries referenced by fvar instances exist on the name table?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:fvar_name_entries>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_variable_font"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "fvar_name_entries",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/2069"
-                    ],
-                    "rationale": "\n        The purpose of this check is to make sure that all name entries referenced\n        by variable font instances do exist in the name table.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
                     "description": "Does font file include unacceptable control character glyphs?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:control_chars>",
@@ -2183,7 +2074,7 @@
                     "description": "Letters in font have glyphs that are not empty?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:empty_letters>",
@@ -2238,6 +2129,38 @@
                     "severity": null
                 },
                 {
+                    "description": "Check if uppercase glyphs are vertically centered.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:caps_vertically_centered>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "lacks-ascii",
+                                "message": "The implementation of this check relies on a few samples of uppercase latin characters that are not available in this font."
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "caps_vertically_centered",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4139"
+                    ],
+                    "rationale": "\n        This check suggests one possible approach to designing vertical metrics,\n        but can be ingnored if you follow a different approach.\n        In order to center text in buttons, lists, and grid systems\n        with minimal additional CSS work, the uppercase glyphs should be\n        vertically centered in the em box.\n        This check mainly applies to Latin, Greek, Cyrillic, and other similar scripts.\n        For non-latin scripts like Arabic, this check might not be applicable.\n        There is a detailed description of this subject at:\n        https://x.com/romanshamin_en/status/1562801657691672576\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
                     "description": "Each font in a family must have the same set of vertical metrics values.",
                     "documentation": null,
                     "experimental": false,
@@ -2267,7 +2190,7 @@
                     "description": "Checking OS/2 usWinAscent & usWinDescent.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:family/win_ascent_and_descent>",
@@ -2296,298 +2219,10 @@
                     "severity": null
                 },
                 {
-                    "description": "Ensure files are not too large.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:file_size>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Font had a reasonable file size"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "file_size",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3320"
-                    ],
-                    "rationale": "\n        Serving extremely large font files causes usability issues.\n        This check ensures that file sizes are reasonable.\n    ",
-                    "result": "PASS",
-                    "severity": 10
-                },
-                {
-                    "description": "Checking if STAT entries matches fvar and vice versa.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:inconsistencies_between_fvar_STAT>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_variable_font"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "inconsistencies_between_fvar_STAT",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/pull/3636"
-                    ],
-                    "rationale": "\n        Check for inconsistencies in names and values between the fvar instances\n        and STAT table. Inconsistencies may cause issues in apps like Adobe InDesign.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Check if uppercase glyphs are vertically centered.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:caps_vertically_centered>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "lacks-ascii",
-                                "message": "The implementation of this check relies on a few samples of uppercase latin characters that are not available in this font."
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "caps_vertically_centered",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4139"
-                    ],
-                    "rationale": "\n        This check suggests one possible approach to designing vertical metrics,\n        but can be ingnored if you follow a different approach.\n        In order to center text in buttons, lists, and grid systems\n        with minimal additional CSS work, the uppercase glyphs should be\n        vertically centered in the em box.\n        This check mainly applies to Latin, Greek, Cyrillic, and other similar scripts.\n        For non-latin scripts like Arabic, this check might not be applicable.\n        There is a detailed description of this subject at:\n        https://x.com/romanshamin_en/status/1562801657691672576\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Does GPOS table have kerning information? This check skips monospaced fonts as defined by post.isFixedPitch value",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:gpos_kerning_info>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "gpos_kerning_info",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n        Well-designed fonts use kerning to improve the spacing between\n        specific pairs of glyphs. This check ensures that the font has\n        kerning information in the GPOS table. It can be ignored if the\n        design or writing system does not require kerning.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Check that legacy accents aren't used in composite glyphs.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:legacy_accents>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "legacy_accents",
-                    "proposal": [
-                        "https://github.com/googlefonts/fontbakery/issues/4310"
-                    ],
-                    "rationale": "\n        Legacy accents should not have anchors and should have positive width.\n        They are often used independently of a letter, either as a placeholder\n        for an expected combined mark+letter combination in MacOS, or separately.\n        For instance, U+00B4 (ACUTE ACCENT) is often mistakenly used as an apostrophe,\n        U+0060 (GRAVE ACCENT) is used in Markdown to notify code blocks,\n        and ^ is used as an exponential operator in maths.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "PPEM must be an integer on hinted fonts.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:integer_ppem_if_hinted>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_hinted"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "integer_ppem_if_hinted",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/2338"
-                    ],
-                    "rationale": "\n        Hinted fonts must have head table flag bit 3 set.\n\n        Per https://docs.microsoft.com/en-us/typography/opentype/spec/head,\n        bit 3 of Head::flags decides whether PPEM should be rounded. This bit should\n        always be set for hinted fonts.\n\n        Note:\n        Bit 3 = Force ppem to integer values for all internal scaler math;\n                May use fractional ppem sizes if this bit is clear;\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Ensure that the font can be rasterized by FreeType.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:freetype_rasterizer>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Font can be rasterized by FreeType."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "freetype_rasterizer",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3642"
-                    ],
-                    "rationale": "\n        Malformed fonts can cause FreeType to crash.\n    ",
-                    "result": "PASS",
-                    "severity": 10
-                },
-                {
-                    "description": "Detect any interpolation issues in the font.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:interpolation_issues>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_variable_font"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "interpolation_issues",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3930"
-                    ],
-                    "rationale": "\n        When creating a variable font, the designer must make sure that corresponding\n        paths have the same start points across masters, as well as that corresponding\n        component shapes are placed in the same order within a glyph across masters.\n        If this is not done, the glyph will not interpolate correctly.\n\n        Here we check for the presence of potential interpolation errors using the\n        fontTools.varLib.interpolatable module.\n    ",
-                    "result": "SKIP",
-                    "severity": 4
-                },
-                {
-                    "description": "Font contains '.notdef' as its first glyph?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:mandatory_glyphs>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "mandatory_glyphs",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n        The OpenType specification v1.8.2 recommends that the first glyph is the\n        '.notdef' glyph without a codepoint assigned and with a drawing:\n\n        The .notdef glyph is very important for providing the user feedback\n        that a glyph is not found in the font. This glyph should not be left\n        without an outline as the user will only see what looks like a space\n        if a glyph is missing and not be aware of the active font\u2019s limitation.\n\n        https://docs.microsoft.com/en-us/typography/opentype/spec/recom#glyph-0-the-notdef-glyph\n\n        Pre-v1.8, it was recommended that fonts should also contain 'space', 'CR'\n        and '.null' glyphs. This might have been relevant for MacOS 9 applications.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
                     "description": "Put an empty glyph on GID 1 right after the .notdef glyph for COLRv0 fonts.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:empty_glyph_on_gid1_for_colrv0>",
@@ -2617,10 +2252,298 @@
                     "severity": null
                 },
                 {
+                    "description": "Checking if STAT entries matches fvar and vice versa.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:inconsistencies_between_fvar_STAT>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_variable_font"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "inconsistencies_between_fvar_STAT",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/pull/3636"
+                    ],
+                    "rationale": "\n        Check for inconsistencies in names and values between the fvar instances\n        and STAT table. Inconsistencies may cause issues in apps like Adobe InDesign.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
+                    "description": "PPEM must be an integer on hinted fonts.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:integer_ppem_if_hinted>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_hinted"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "integer_ppem_if_hinted",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/2338"
+                    ],
+                    "rationale": "\n        Hinted fonts must have head table flag bit 3 set.\n\n        Per https://docs.microsoft.com/en-us/typography/opentype/spec/head,\n        bit 3 of Head::flags decides whether PPEM should be rounded. This bit should\n        always be set for hinted fonts.\n\n        Note:\n        Bit 3 = Force ppem to integer values for all internal scaler math;\n                May use fractional ppem sizes if this bit is clear;\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
+                    "description": "Does GPOS table have kerning information? This check skips monospaced fonts as defined by post.isFixedPitch value",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:gpos_kerning_info>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "gpos_kerning_info",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n        Well-designed fonts use kerning to improve the spacing between\n        specific pairs of glyphs. This check ensures that the font has\n        kerning information in the GPOS table. It can be ignored if the\n        design or writing system does not require kerning.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Ensure that the font can be rasterized by FreeType.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:freetype_rasterizer>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Font can be rasterized by FreeType."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "freetype_rasterizer",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3642"
+                    ],
+                    "rationale": "\n        Malformed fonts can cause FreeType to crash.\n    ",
+                    "result": "PASS",
+                    "severity": 10
+                },
+                {
+                    "description": "All name entries referenced by fvar instances exist on the name table?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:fvar_name_entries>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_variable_font"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "fvar_name_entries",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/2069"
+                    ],
+                    "rationale": "\n        The purpose of this check is to make sure that all name entries referenced\n        by variable font instances do exist in the name table.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
+                    "description": "Detect any interpolation issues in the font.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:interpolation_issues>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_variable_font"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "interpolation_issues",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3930"
+                    ],
+                    "rationale": "\n        When creating a variable font, the designer must make sure that corresponding\n        paths have the same start points across masters, as well as that corresponding\n        component shapes are placed in the same order within a glyph across masters.\n        If this is not done, the glyph will not interpolate correctly.\n\n        Here we check for the presence of potential interpolation errors using the\n        fontTools.varLib.interpolatable module.\n    ",
+                    "result": "SKIP",
+                    "severity": 4
+                },
+                {
+                    "description": "Ensure files are not too large.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:file_size>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Font had a reasonable file size"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "file_size",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3320"
+                    ],
+                    "rationale": "\n        Serving extremely large font files causes usability issues.\n        This check ensures that file sizes are reasonable.\n    ",
+                    "result": "PASS",
+                    "severity": 10
+                },
+                {
+                    "description": "Check that legacy accents aren't used in composite glyphs.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:legacy_accents>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "legacy_accents",
+                    "proposal": [
+                        "https://github.com/googlefonts/fontbakery/issues/4310"
+                    ],
+                    "rationale": "\n        Legacy accents should not have anchors and should have positive width.\n        They are often used independently of a letter, either as a placeholder\n        for an expected combined mark+letter combination in MacOS, or separately.\n        For instance, U+00B4 (ACUTE ACCENT) is often mistakenly used as an apostrophe,\n        U+0060 (GRAVE ACCENT) is used in Markdown to notify code blocks,\n        and ^ is used as an exponential operator in maths.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Are there caret positions declared for every ligature?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:ligature_carets>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "no-ligatures",
+                                "message": "No ligature glyphs found."
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "ligature_carets",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/1225"
+                    ],
+                    "rationale": "\n        All ligatures in a font must have corresponding caret (text cursor) positions\n        defined in the GDEF table, otherwhise, users may experience issues with\n        caret rendering.\n\n        If using GlyphsApp or UFOs, ligature carets can be defined as anchors with\n        names starting with `caret_`. These can be compiled with fontmake as of\n        version v2.4.0.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
                     "description": "Checking Vertical Metric Linegaps.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:linegaps>",
@@ -2650,10 +2573,170 @@
                     "severity": null
                 },
                 {
+                    "description": "Ensure variable fonts include an avar table.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:mandatory_avar_table>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_variable_font"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "mandatory_avar_table",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3100"
+                    ],
+                    "rationale": "\n        Most variable fonts should include an avar table to correctly define\n        axes progression rates.\n\n        For example, a weight axis from 0% to 100% doesn't map directly to 100 to 1000,\n        because a 10% progression from 0% may be too much to define the 200,\n        while 90% may be too little to define the 900.\n\n        If the progression rates of axes is linear, this check can be ignored.\n        Fontmake will also skip adding an avar table if the progression rates\n        are linear. However, it is still recommended that designers visually proof\n        each instance is at the expected weight, width etc.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
+                    "description": "Font contains '.notdef' as its first glyph?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:mandatory_glyphs>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "mandatory_glyphs",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n        The OpenType specification v1.8.2 recommends that the first glyph is the\n        '.notdef' glyph without a codepoint assigned and with a drawing:\n\n        The .notdef glyph is very important for providing the user feedback\n        that a glyph is not found in the font. This glyph should not be left\n        without an outline as the user will only see what looks like a space\n        if a glyph is missing and not be aware of the active font\u2019s limitation.\n\n        https://docs.microsoft.com/en-us/typography/opentype/spec/recom#glyph-0-the-notdef-glyph\n\n        Pre-v1.8, it was recommended that fonts should also contain 'space', 'CR'\n        and '.null' glyphs. This might have been relevant for MacOS 9 applications.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Check math signs have the same width.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:math_signs_width>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Looks good."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "math_signs_width",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3832"
+                    ],
+                    "rationale": "\n        It is a common practice to have math signs sharing the same width\n        (preferably the same width as tabular figures accross the entire font family).\n\n        This probably comes from the will to avoid additional tabular math signs\n        knowing that their design can easily share the same width.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Ensure small caps glyphs are available.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:missing_small_caps_glyphs>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "missing_small_caps_glyphs",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3154"
+                    ],
+                    "rationale": "\n        Ensure small caps glyphs are available if\n        a font declares smcp or c2sc OT features.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Ensure no GPOS7 lookups are present.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:gpos7>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Font has no GPOS7 lookups"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "gpos7",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3643"
+                    ],
+                    "rationale": "\n        Versions of fonttools >=4.14.0 (19 August 2020) perform an optimisation on\n        chained contextual lookups, expressing GSUB6 as GSUB5 and GPOS8 and GPOS7\n        where possible (when there are no suffixes/prefixes for all rules in\n        the lookup).\n\n        However, makeotf has never generated these lookup types and they are rare\n        in practice. Perhaps because of this, Mac's CoreText shaper does not correctly\n        interpret GPOS7, meaning that these lookups will be ignored by the shaper,\n        and fonts containing these lookups will have unintended positioning errors.\n\n        To fix this warning, rebuild the font with a recent version of fonttools.\n    ",
+                    "result": "PASS",
+                    "severity": 9
+                },
+                {
                     "description": "Are there disallowed characters in the NAME table?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:name/char_restrictions>",
@@ -2684,77 +2767,13 @@
                     "severity": null
                 },
                 {
-                    "description": "Are there caret positions declared for every ligature?",
+                    "description": "Ensure font doesn't have Mac name table entries (platform=1).",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:ligature_carets>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "no-ligatures",
-                                "message": "No ligature glyphs found."
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "ligature_carets",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/1225"
-                    ],
-                    "rationale": "\n        All ligatures in a font must have corresponding caret (text cursor) positions\n        defined in the GDEF table, otherwhise, users may experience issues with\n        caret rendering.\n\n        If using GlyphsApp or UFOs, ligature carets can be defined as anchors with\n        names starting with `caret_`. These can be compiled with fontmake as of\n        version v2.4.0.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Check math signs have the same width.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:math_signs_width>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Looks good."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "math_signs_width",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3832"
-                    ],
-                    "rationale": "\n        It is a common practice to have math signs sharing the same width\n        (preferably the same width as tabular figures accross the entire font family).\n\n        This probably comes from the will to avoid additional tabular math signs\n        knowing that their design can easily share the same width.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Description strings in the name table must not contain copyright info.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:name/no_copyright_on_description>",
+                        "<FontBakeryCheck:no_mac_entries>",
                         [
                             [
                                 "font",
@@ -2771,115 +2790,19 @@
                             "status": "PASS"
                         }
                     ],
-                    "module": "name.no_copyright_on_description",
+                    "module": "no_mac_entries",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
+                        "https://github.com/googlefonts/gftools/issues/469"
                     ],
-                    "rationale": "\n        The name table in a font file contains strings about the font;\n        there are entries for a copyright field and a description. If the\n        copyright entry is being used correctly, then there should not\n        be any copyright information in the description entry.\n    ",
+                    "rationale": "\n        Mac name table entries are not needed anymore. Even Apple stopped producing\n        name tables with platform 1. Please see for example the following system font:\n\n        /System/Library/Fonts/SFCompact.ttf\n\n        Also, Dave Opstad, who developed Apple's TrueType specifications, told\n        Olli Meier a couple years ago (as of January/2022) that these entries are\n        outdated and should not be produced anymore.\n    ",
                     "result": "PASS",
                     "severity": null
-                },
-                {
-                    "description": "Ensure small caps glyphs are available.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:missing_small_caps_glyphs>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "missing_small_caps_glyphs",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3154"
-                    ],
-                    "rationale": "\n        Ensure small caps glyphs are available if\n        a font declares smcp or c2sc OT features.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Ensure variable fonts include an avar table.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:mandatory_avar_table>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_variable_font"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "mandatory_avar_table",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3100"
-                    ],
-                    "rationale": "\n        Most variable fonts should include an avar table to correctly define\n        axes progression rates.\n\n        For example, a weight axis from 0% to 100% doesn't map directly to 100 to 1000,\n        because a 10% progression from 0% may be too much to define the 200,\n        while 90% may be too little to define the 900.\n\n        If the progression rates of axes is linear, this check can be ignored.\n        Fontmake will also skip adding an avar table if the progression rates\n        are linear. However, it is still recommended that designers visually proof\n        each instance is at the expected weight, width etc.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Ensure no GPOS7 lookups are present.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:gpos7>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Font has no GPOS7 lookups"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "gpos7",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3643"
-                    ],
-                    "rationale": "\n        Versions of fonttools >=4.14.0 (19 August 2020) perform an optimisation on\n        chained contextual lookups, expressing GSUB6 as GSUB5 and GPOS8 and GPOS7\n        where possible (when there are no suffixes/prefixes for all rules in\n        the lookup).\n\n        However, makeotf has never generated these lookup types and they are rare\n        in practice. Perhaps because of this, Mac's CoreText shaper does not correctly\n        interpret GPOS7, meaning that these lookups will be ignored by the shaper,\n        and fonts containing these lookups will have unintended positioning errors.\n\n        To fix this warning, rebuild the font with a recent version of fonttools.\n    ",
-                    "result": "PASS",
-                    "severity": 9
                 },
                 {
                     "description": "Name table records must not have trailing spaces.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:name/trailing_spaces>",
@@ -2908,13 +2831,45 @@
                     "severity": null
                 },
                 {
-                    "description": "Combined length of family and style must not exceed 31 characters.",
+                    "description": "Show hinting filesize impact.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:name/family_and_style_max_length>",
+                        "<FontBakeryCheck:hinting_impact>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "size-impact",
+                                "message": "Hinting filesize impact:\n\n |               | scrivi/fonts/ttf/Scrivi-Regular.ttf     |\n |:------------- | ---------------:|\n | Dehinted Size | 101.7kb |\n | Hinted Size   | 101.7kb   |\n | Increase      | 24 bytes      |\n | Change        | 0.0 %  |\n"
+                            },
+                            "status": "INFO"
+                        }
+                    ],
+                    "module": "hinting_impact",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n        This check is merely informative, displaying an useful comparison of filesizes\n        of hinted versus unhinted font files.\n    ",
+                    "result": "INFO",
+                    "severity": null
+                },
+                {
+                    "description": "Description strings in the name table must not contain copyright info.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:name/no_copyright_on_description>",
                         [
                             [
                                 "font",
@@ -2931,12 +2886,11 @@
                             "status": "PASS"
                         }
                     ],
-                    "module": "name.family_and_style_max_length",
+                    "module": "name.no_copyright_on_description",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/1488",
-                        "https://github.com/fonttools/fontbakery/issues/2179"
+                        "https://github.com/fonttools/fontbakery/issues/4829"
                     ],
-                    "rationale": "\n        This check ensures that the length of name table entries is not\n        too long, as this causes problems in some environments.\n\n        Background on length limit (credit to Aaron Bell at google/fonts/issues/9185):\n\n        The font dropdown in Microsoft Office on PC is driven by the older\n        GDI font enumeration and rendering technology. GDI uses LOGFONTA\n        (https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-logfonta)\n        to define the attributes of a font, and CHAR lfFaceName[LF_FACESIZE];\n        to define the font name. The problem, though, is that the string lfFaceName\n        is restricted to 32 characters, including the terminating NULL.\n\n        In a variable font where the master location is at a location with a\n        significant number of characters, say, \u201cExtraLight\u201d, name ID 1 can become\n        quite long (eg: \u201cChiron Hei HK ExtraLight\u201d). However, in determining the\n        font name, Microsoft will prioritize name ID 16 over name ID 1. So this\n        lets one reduce the character count back to the standard font name\n        (eg: \u201cChiron Hei HK\u201d).\n    ",
+                    "rationale": "\n        The name table in a font file contains strings about the font;\n        there are entries for a copyright field and a description. If the\n        copyright entry is being used correctly, then there should not\n        be any copyright information in the description entry.\n    ",
                     "result": "PASS",
                     "severity": null
                 },
@@ -2944,7 +2898,7 @@
                     "description": "Check name table IDs 1, 2, 16, 17 to conform to Italic style.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:name/italic_names>",
@@ -2976,7 +2930,7 @@
                     "description": "Ensure glyphs do not have components which are themselves components.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:nested_components>",
@@ -3005,13 +2959,13 @@
                     "severity": null
                 },
                 {
-                    "description": "Ensure font doesn't have Mac name table entries (platform=1).",
+                    "description": "Combined length of family and style must not exceed 31 characters.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:no_mac_entries>",
+                        "<FontBakeryCheck:name/family_and_style_max_length>",
                         [
                             [
                                 "font",
@@ -3028,43 +2982,12 @@
                             "status": "PASS"
                         }
                     ],
-                    "module": "no_mac_entries",
+                    "module": "name.family_and_style_max_length",
                     "proposal": [
-                        "https://github.com/googlefonts/gftools/issues/469"
+                        "https://github.com/fonttools/fontbakery/issues/1488",
+                        "https://github.com/fonttools/fontbakery/issues/2179"
                     ],
-                    "rationale": "\n        Mac name table entries are not needed anymore. Even Apple stopped producing\n        name tables with platform 1. Please see for example the following system font:\n\n        /System/Library/Fonts/SFCompact.ttf\n\n        Also, Dave Opstad, who developed Apple's TrueType specifications, told\n        Olli Meier a couple years ago (as of January/2022) that these entries are\n        outdated and should not be produced anymore.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Checking OS/2 Metrics match hhea Metrics.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:os2_metrics_match_hhea>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "OS/2.sTypoAscender/Descender values match hhea.ascent/descent."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "os2_metrics_match_hhea",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n        OS/2 and hhea vertical metric values should match. This will produce the\n        same linespacing on Mac, GNU+Linux and Windows.\n\n        - Mac OS X uses the hhea values.\n        - Windows uses OS/2 or Win, depending on the OS or fsSelection bit value.\n\n        When OS/2 and hhea vertical metrics match, the same linespacing results on\n        macOS, GNU+Linux and Windows. Note that fixing this issue in a previously\n        released font may cause reflow in user documents and unhappy users.\n    ",
+                    "rationale": "\n        This check ensures that the length of name table entries is not\n        too long, as this causes problems in some environments.\n\n        Background on length limit (credit to Aaron Bell at google/fonts/issues/9185):\n\n        The font dropdown in Microsoft Office on PC is driven by the older\n        GDI font enumeration and rendering technology. GDI uses LOGFONTA\n        (https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-logfonta)\n        to define the attributes of a font, and CHAR lfFaceName[LF_FACESIZE];\n        to define the font name. The problem, though, is that the string lfFaceName\n        is restricted to 32 characters, including the terminating NULL.\n\n        In a variable font where the master location is at a location with a\n        significant number of characters, say, \u201cExtraLight\u201d, name ID 1 can become\n        quite long (eg: \u201cChiron Hei HK ExtraLight\u201d). However, in determining the\n        font name, Microsoft will prioritize name ID 16 over name ID 1. So this\n        lets one reduce the character count back to the standard font name\n        (eg: \u201cChiron Hei HK\u201d).\n    ",
                     "result": "PASS",
                     "severity": null
                 },
@@ -3072,7 +2995,7 @@
                     "description": "Ensure 'smcp' (small caps) lookups are defined before ligature lookups in the 'GSUB' table.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:smallcaps_before_ligatures>",
@@ -3101,203 +3024,10 @@
                     "severity": null
                 },
                 {
-                    "description": "Ensure indic fonts have the Indian Rupee Sign glyph.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:rupee>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_indic_font"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "rupee",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/2967"
-                    ],
-                    "rationale": "\n        Per Bureau of Indian Standards every font supporting one of the\n        official Indian languages needs to include Unicode Character\n        \u201c\u20b9\u201d (U+20B9) Indian Rupee Sign.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Font has the proper sfntVersion value?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:sfnt_version>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Font has the correct sfntVersion value."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "sfnt_version",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3388"
-                    ],
-                    "rationale": "\n        OpenType fonts that contain TrueType outlines should use the value of 0x00010000\n        for the sfntVersion. OpenType fonts containing CFF data (version 1 or 2) should\n        use 0x4F54544F ('OTTO', when re-interpreted as a Tag) for sfntVersion.\n\n        Fonts with the wrong sfntVersion value are rejected by FreeType.\n\n        https://docs.microsoft.com/en-us/typography/opentype/spec/otff#table-directory\n    ",
-                    "result": "PASS",
-                    "severity": 10
-                },
-                {
-                    "description": "Ensure smart dropout control is enabled in \"prep\" table instructions.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:smart_dropout>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "smart_dropout",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n        This setup is meant to ensure consistent rendering quality for fonts across\n        all devices (with different rendering/hinting capabilities).\n\n        Below is the snippet of instructions we expect to see in the fonts:\n        B8 01 FF    PUSHW 0x01FF\n        85          SCANCTRL (unconditinally turn on\n                              dropout control mode)\n        B0 04       PUSHB 0x04\n        8D          SCANTYPE (enable smart dropout control)\n\n        \"Smart dropout control\" means activating rules 1, 2 and 5:\n        Rule 1: If a pixel's center falls within the glyph outline,\n                that pixel is turned on.\n        Rule 2: If a contour falls exactly on a pixel's center,\n                that pixel is turned on.\n        Rule 5: If a scan line between two adjacent pixel centers\n                (either vertical or horizontal) is intersected\n                by both an on-Transition contour and an off-Transition\n                contour and neither of the pixels was already turned on\n                by rules 1 and 2, turn on the pixel which is closer to\n                the midpoint between the on-Transition contour and\n                off-Transition contour. This is \"Smart\" dropout control.\n\n        For more detailed info (such as other rules not enabled in this snippet),\n        please refer to the TrueType Instruction Set documentation.\n\n        Generally this occurs with unhinted fonts; if you are not using autohinting,\n        use gftools-fix-nonhinting (or just gftools-fix-font) to fix this issue.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Check correctness of STAT table strings",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:STAT_strings>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: has_STAT_table"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "STAT_strings",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/2863"
-                    ],
-                    "rationale": "\n        On the STAT table, the \"Italic\" keyword must not be used on AxisValues\n        for variation axes other than 'ital'.\n    ",
-                    "result": "SKIP",
-                    "severity": null
-                },
-                {
-                    "description": "Does the font contain a soft hyphen?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:soft_hyphen>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "softhyphen",
-                                "message": "This font has a 'Soft Hyphen' character."
-                            },
-                            "status": "WARN"
-                        }
-                    ],
-                    "module": "soft_hyphen",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4046",
-                        "https://github.com/fonttools/fontbakery/issues/3486"
-                    ],
-                    "rationale": "\n        The 'Soft Hyphen' character (codepoint 0x00AD) is used to mark\n        a hyphenation possibility within a word in the absence of or\n        overriding dictionary hyphenation.\n\n        It is sometimes designed empty with no width (such as a control character),\n        sometimes the same as the traditional hyphen, sometimes double encoded with\n        the hyphen.\n\n        That being said, it is recommended to not include it in the font at all,\n        because discretionary hyphenation should be handled at the level of the\n        shaping engine, not the font. Also, even if present, the software would\n        not display that character.\n\n        More discussion at:\n        https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar\n    ",
-                    "result": "WARN",
-                    "severity": null
-                },
-                {
-                    "description": "Ensure Stylistic Sets have description.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:stylisticset_description>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "stylisticset_description",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3155"
-                    ],
-                    "rationale": "\n        Stylistic sets should provide description text. Programs such as InDesign,\n        TextEdit and Inkscape use that info to display to the users so that they know\n        what a given stylistic set offers.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
                     "description": "Font contains all required tables?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:required_tables>",
@@ -3333,10 +3063,171 @@
                     "severity": null
                 },
                 {
+                    "description": "Does the font contain a soft hyphen?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:soft_hyphen>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "softhyphen",
+                                "message": "This font has a 'Soft Hyphen' character."
+                            },
+                            "status": "WARN"
+                        }
+                    ],
+                    "module": "soft_hyphen",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4046",
+                        "https://github.com/fonttools/fontbakery/issues/3486"
+                    ],
+                    "rationale": "\n        The 'Soft Hyphen' character (codepoint 0x00AD) is used to mark\n        a hyphenation possibility within a word in the absence of or\n        overriding dictionary hyphenation.\n\n        It is sometimes designed empty with no width (such as a control character),\n        sometimes the same as the traditional hyphen, sometimes double encoded with\n        the hyphen.\n\n        That being said, it is recommended to not include it in the font at all,\n        because discretionary hyphenation should be handled at the level of the\n        shaping engine, not the font. Also, even if present, the software would\n        not display that character.\n\n        More discussion at:\n        https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar\n    ",
+                    "result": "WARN",
+                    "severity": null
+                },
+                {
+                    "description": "Font has the proper sfntVersion value?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:sfnt_version>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Font has the correct sfntVersion value."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "sfnt_version",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3388"
+                    ],
+                    "rationale": "\n        OpenType fonts that contain TrueType outlines should use the value of 0x00010000\n        for the sfntVersion. OpenType fonts containing CFF data (version 1 or 2) should\n        use 0x4F54544F ('OTTO', when re-interpreted as a Tag) for sfntVersion.\n\n        Fonts with the wrong sfntVersion value are rejected by FreeType.\n\n        https://docs.microsoft.com/en-us/typography/opentype/spec/otff#table-directory\n    ",
+                    "result": "PASS",
+                    "severity": 10
+                },
+                {
+                    "description": "Ensure smart dropout control is enabled in \"prep\" table instructions.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:smart_dropout>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "smart_dropout",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n        This setup is meant to ensure consistent rendering quality for fonts across\n        all devices (with different rendering/hinting capabilities).\n\n        Below is the snippet of instructions we expect to see in the fonts:\n        B8 01 FF    PUSHW 0x01FF\n        85          SCANCTRL (unconditinally turn on\n                              dropout control mode)\n        B0 04       PUSHB 0x04\n        8D          SCANTYPE (enable smart dropout control)\n\n        \"Smart dropout control\" means activating rules 1, 2 and 5:\n        Rule 1: If a pixel's center falls within the glyph outline,\n                that pixel is turned on.\n        Rule 2: If a contour falls exactly on a pixel's center,\n                that pixel is turned on.\n        Rule 5: If a scan line between two adjacent pixel centers\n                (either vertical or horizontal) is intersected\n                by both an on-Transition contour and an off-Transition\n                contour and neither of the pixels was already turned on\n                by rules 1 and 2, turn on the pixel which is closer to\n                the midpoint between the on-Transition contour and\n                off-Transition contour. This is \"Smart\" dropout control.\n\n        For more detailed info (such as other rules not enabled in this snippet),\n        please refer to the TrueType Instruction Set documentation.\n\n        Generally this occurs with unhinted fonts; if you are not using autohinting,\n        use gftools-fix-nonhinting (or just gftools-fix-font) to fix this issue.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Checking OS/2 Metrics match hhea Metrics.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:os2_metrics_match_hhea>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "OS/2.sTypoAscender/Descender values match hhea.ascent/descent."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "os2_metrics_match_hhea",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n        OS/2 and hhea vertical metric values should match. This will produce the\n        same linespacing on Mac, GNU+Linux and Windows.\n\n        - Mac OS X uses the hhea values.\n        - Windows uses OS/2 or Win, depending on the OS or fsSelection bit value.\n\n        When OS/2 and hhea vertical metrics match, the same linespacing results on\n        macOS, GNU+Linux and Windows. Note that fixing this issue in a previously\n        released font may cause reflow in user documents and unhappy users.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Ensure indic fonts have the Indian Rupee Sign glyph.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:rupee>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_indic_font"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "rupee",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/2967"
+                    ],
+                    "rationale": "\n        Per Bureau of Indian Standards every font supporting one of the\n        official Indian languages needs to include Unicode Character\n        \u201c\u20b9\u201d (U+20B9) Indian Rupee Sign.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
                     "description": "Checking STAT table entries in static fonts.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:STAT_in_statics>",
@@ -3365,13 +3256,13 @@
                     "severity": null
                 },
                 {
-                    "description": "Show hinting filesize impact.",
+                    "description": "Check correctness of STAT table strings",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:hinting_impact>",
+                        "<FontBakeryCheck:STAT_strings>",
                         [
                             [
                                 "font",
@@ -3382,25 +3273,89 @@
                     "logs": [
                         {
                             "message": {
-                                "code": "size-impact",
-                                "message": "Hinting filesize impact:\n\n |               | ar-scrittura-upstream/fonts/ARScrittura-Regular.ttf     |\n |:------------- | ---------------:|\n | Dehinted Size | 101.8kb |\n | Hinted Size   | 101.8kb   |\n | Increase      | 24 bytes      |\n | Change        | 0.0 %  |\n"
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: has_STAT_table"
                             },
-                            "status": "INFO"
+                            "status": "SKIP"
                         }
                     ],
-                    "module": "hinting_impact",
+                    "module": "STAT_strings",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
+                        "https://github.com/fonttools/fontbakery/issues/2863"
                     ],
-                    "rationale": "\n        This check is merely informative, displaying an useful comparison of filesizes\n        of hinted versus unhinted font files.\n    ",
-                    "result": "INFO",
+                    "rationale": "\n        On the STAT table, the \"Italic\" keyword must not be used on AxisValues\n        for variation axes other than 'ital'.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
+                    "description": "Check there are no overlapping path segments",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:overlapping_path_segments>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "No overlapping path segments found."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "overlapping_path_segments",
+                    "proposal": [
+                        "https://github.com/google/fonts/issues/7594#issuecomment-2401909084"
+                    ],
+                    "rationale": "\n        Some rasterizers encounter difficulties when rendering glyphs with\n        overlapping path segments.\n\n        A path segment is a section of a path defined by two on-curve points.\n        When two segments share the same coordinates, they are considered\n        overlapping.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Ensure Stylistic Sets have description.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:stylisticset_description>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "stylisticset_description",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/3155"
+                    ],
+                    "rationale": "\n        Stylistic sets should provide description text. Programs such as InDesign,\n        TextEdit and Inkscape use that info to display to the users so that they know\n        what a given stylistic set offers.\n    ",
+                    "result": "PASS",
                     "severity": null
                 },
                 {
                     "description": "Check tabular widths don't have kerning.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:tabular_kerning>",
@@ -3432,7 +3387,7 @@
                     "description": "Ensure component transforms do not perform scaling or rotation.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:transformed_components>",
@@ -3487,42 +3442,10 @@
                     "severity": null
                 },
                 {
-                    "description": "Checking with ots-sanitize.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:ots>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "ok",
-                                "message": "All looks good!"
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "ots",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n       The OpenType Sanitizer (OTS) is a tool that checks that the font is\n       structually well-formed and passes various sanity checks. It is used by\n       many web browsers to check web fonts before using them; fonts which fail\n       such checks are blocked by browsers.\n\n       This check runs OTS on the font and reports any errors or warnings that\n       it finds.\n       ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
                     "description": "Font contains unique glyph names?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:unique_glyphnames>",
@@ -3547,6 +3470,103 @@
                         "https://github.com/fonttools/fontbakery/issues/4829"
                     ],
                     "rationale": "\n        Duplicate glyph names prevent font installation on Mac OS X.\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "Glyph names are all valid?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:valid_glyphnames>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Glyph names are all valid."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "valid_glyphnames",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/2832",
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n        Microsoft's recommendations for OpenType Fonts states the following:\n\n        'NOTE: The PostScript glyph name must be no longer than 31 characters,\n        include only uppercase or lowercase English letters, European digits,\n        the period or the underscore, i.e. from the set `[A-Za-z0-9_.]` and\n        should start with a letter, except the special glyph name `.notdef`\n        which starts with a period.'\n\n        https://learn.microsoft.com/en-us/typography/opentype/otspec181/recom#-post--table\n\n\n        In practice, though, particularly in modern environments, glyph names\n        can be as long as 63 characters.\n\n        According to the \"Adobe Glyph List Specification\" available at:\n\n        https://github.com/adobe-type-tools/agl-specification\n    ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
+                    "description": "The variable font 'wght' (Weight) axis coordinate must be 700 on the 'Bold' instance.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:varfont/bold_wght_coord>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "unfulfilled-conditions",
+                                "message": "Unfulfilled Conditions: is_variable_font, has_wght_axis"
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "varfont.bold_wght_coord",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/1707"
+                    ],
+                    "rationale": "\n        The OpenType spec's registered\n        design-variation tag 'wght' available at\n        https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght\n        does not specify a required value for the 'Bold' instance of a variable font.\n\n        But Dave Crossland suggested that a required value of 700 should be enforced \n        in this case (NOTE: a distinction is made between \"no bold instance present\"\n        vs \"bold instance is present but its wght coordinate is not == 700\").\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                },
+                {
+                    "description": "Checking with ots-sanitize.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:ots>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "ok",
+                                "message": "All looks good!"
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "ots",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n       The OpenType Sanitizer (OTS) is a tool that checks that the font is\n       structually well-formed and passes various sanity checks. It is used by\n       many web browsers to check web fonts before using them; fonts which fail\n       such checks are blocked by browsers.\n\n       This check runs OTS on the font and reports any errors or warnings that\n       it finds.\n       ",
                     "result": "PASS",
                     "severity": null
                 },
@@ -3577,13 +3597,13 @@
                     "severity": null
                 },
                 {
-                    "description": "The variable font 'wght' (Weight) axis coordinate must be 700 on the 'Bold' instance.",
+                    "description": "Ensure VFs with duplexed axes do not vary horizontal advance.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:varfont/bold_wght_coord>",
+                        "<FontBakeryCheck:varfont/duplexed_axis_reflow>",
                         [
                             [
                                 "font",
@@ -3595,16 +3615,16 @@
                         {
                             "message": {
                                 "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_variable_font, has_wght_axis"
+                                "message": "Unfulfilled Conditions: is_variable_font"
                             },
                             "status": "SKIP"
                         }
                     ],
-                    "module": "varfont.bold_wght_coord",
+                    "module": "varfont.duplexed_axis_reflow",
                     "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/1707"
+                        "https://github.com/fonttools/fontbakery/issues/3187"
                     ],
-                    "rationale": "\n        The OpenType spec's registered\n        design-variation tag 'wght' available at\n        https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght\n        does not specify a required value for the 'Bold' instance of a variable font.\n\n        But Dave Crossland suggested that a required value of 700 should be enforced \n        in this case (NOTE: a distinction is made between \"no bold instance present\"\n        vs \"bold instance is present but its wght coordinate is not == 700\").\n    ",
+                    "rationale": "\n        Certain axes, such as grade (GRAD) or roundness (ROND), should not\n        change any advanceWidth or kerning data across the font's design space.\n        This is because altering the advance width of glyphs can cause text reflow.\n    ",
                     "result": "SKIP",
                     "severity": null
                 },
@@ -3612,7 +3632,7 @@
                     "description": "Check variable font instances don't have duplicate names",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:varfont/duplicate_instance_names>",
@@ -3644,7 +3664,7 @@
                     "description": "Ensure the font's instances are in the correct order.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:varfont/instances_in_order>",
@@ -3673,13 +3693,13 @@
                     "severity": 2
                 },
                 {
-                    "description": "Check there are no overlapping path segments",
+                    "description": "Checking that the typoAscender exceeds the yMax of the /Agrave.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:overlapping_path_segments>",
+                        "<FontBakeryCheck:typoascender_exceeds_Agrave>",
                         [
                             [
                                 "font",
@@ -3691,56 +3711,24 @@
                         {
                             "message": {
                                 "code": null,
-                                "message": "No overlapping path segments found."
+                                "message": "OS/2.sTypoAscender value is greater than the yMax of /Agrave."
                             },
                             "status": "PASS"
                         }
                     ],
-                    "module": "overlapping_path_segments",
+                    "module": "typoascender_exceeds_Agrave",
                     "proposal": [
-                        "https://github.com/google/fonts/issues/7594#issuecomment-2401909084"
+                        "https://github.com/fonttools/fontbakery/issues/3170"
                     ],
-                    "rationale": "\n        Some rasterizers encounter difficulties when rendering glyphs with\n        overlapping path segments.\n\n        A path segment is a section of a path defined by two on-curve points.\n        When two segments share the same coordinates, they are considered\n        overlapping.\n    ",
+                    "rationale": "\n        MacOS uses OS/2.sTypoAscender/Descender values to determine the line height\n        of a font. If the sTypoAscender value is smaller than the maximum height of\n        the uppercase /Agrave, the font\u2019s sTypoAscender value is ignored, and a very\n        tall line height is used instead.\n\n        This happens on a per-font, per-style basis, so it\u2019s possible for a font to\n        have a good sTypoAscender value in one style but not in another. This can\n        lead to inconsistent line heights across a typeface family.\n\n        So, it is important to ensure that the sTypoAscender value is greater than\n        the maximum height of the uppercase /Agrave in all styles of a type family.\n    ",
                     "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Ensure VFs with duplexed axes do not vary horizontal advance.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:varfont/duplexed_axis_reflow>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": "unfulfilled-conditions",
-                                "message": "Unfulfilled Conditions: is_variable_font"
-                            },
-                            "status": "SKIP"
-                        }
-                    ],
-                    "module": "varfont.duplexed_axis_reflow",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3187"
-                    ],
-                    "rationale": "\n        Certain axes, such as grade (GRAD) or roundness (ROND), should not\n        change any advanceWidth or kerning data across the font's design space.\n        This is because altering the advance width of glyphs can cause text reflow.\n    ",
-                    "result": "SKIP",
                     "severity": null
                 },
                 {
                     "description": "Ensure VFs do not contain (yet) the ital axis.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:varfont/unsupported_axes>",
@@ -3769,42 +3757,10 @@
                     "severity": null
                 },
                 {
-                    "description": "Whitespace glyphs have ink?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:whitespace_ink>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "There is no whitespace glyph with ink."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "whitespace_ink",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n           This check ensures that certain whitespace glyphs are empty.\n           Certain text layout engines will assume that these glyphs are empty,\n           and will not draw them; if they were in fact not designed to be\n           empty, the result will be text layout that is not as expected.\n       ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
                     "description": "VTT or Volt Source Data must not be present.",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:vtt_volt_data>",
@@ -3920,7 +3876,7 @@
                     "description": "Font contains glyphs for whitespace characters?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:whitespace_glyphs>",
@@ -3949,10 +3905,42 @@
                     "severity": null
                 },
                 {
+                    "description": "Whitespace glyphs have ink?",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Universal Profile Checks>",
+                        "<FontBakeryCheck:whitespace_ink>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "There is no whitespace glyph with ink."
+                            },
+                            "status": "PASS"
+                        }
+                    ],
+                    "module": "whitespace_ink",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/4829"
+                    ],
+                    "rationale": "\n           This check ensures that certain whitespace glyphs are empty.\n           Certain text layout engines will assume that these glyphs are empty,\n           and will not draw them; if they were in fact not designed to be\n           empty, the result will be text layout that is not as expected.\n       ",
+                    "result": "PASS",
+                    "severity": null
+                },
+                {
                     "description": "Space and non-breaking space have the same width?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:whitespace_widths>",
@@ -3982,75 +3970,10 @@
                     "severity": null
                 },
                 {
-                    "description": "Glyph names are all valid?",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:valid_glyphnames>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "Glyph names are all valid."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "valid_glyphnames",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/2832",
-                        "https://github.com/fonttools/fontbakery/issues/4829"
-                    ],
-                    "rationale": "\n        Microsoft's recommendations for OpenType Fonts states the following:\n\n        'NOTE: The PostScript glyph name must be no longer than 31 characters,\n        include only uppercase or lowercase English letters, European digits,\n        the period or the underscore, i.e. from the set `[A-Za-z0-9_.]` and\n        should start with a letter, except the special glyph name `.notdef`\n        which starts with a period.'\n\n        https://learn.microsoft.com/en-us/typography/opentype/otspec181/recom#-post--table\n\n\n        In practice, though, particularly in modern environments, glyph names\n        can be as long as 63 characters.\n\n        According to the \"Adobe Glyph List Specification\" available at:\n\n        https://github.com/adobe-type-tools/agl-specification\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
-                    "description": "Checking that the typoAscender exceeds the yMax of the /Agrave.",
-                    "documentation": null,
-                    "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
-                    "key": [
-                        "<Section: Universal Profile Checks>",
-                        "<FontBakeryCheck:typoascender_exceeds_Agrave>",
-                        [
-                            [
-                                "font",
-                                0
-                            ]
-                        ]
-                    ],
-                    "logs": [
-                        {
-                            "message": {
-                                "code": null,
-                                "message": "OS/2.sTypoAscender value is greater than the yMax of /Agrave."
-                            },
-                            "status": "PASS"
-                        }
-                    ],
-                    "module": "typoascender_exceeds_Agrave",
-                    "proposal": [
-                        "https://github.com/fonttools/fontbakery/issues/3170"
-                    ],
-                    "rationale": "\n        MacOS uses OS/2.sTypoAscender/Descender values to determine the line height\n        of a font. If the sTypoAscender value is smaller than the maximum height of\n        the uppercase /Agrave, the font\u2019s sTypoAscender value is ignored, and a very\n        tall line height is used instead.\n\n        This happens on a per-font, per-style basis, so it\u2019s possible for a font to\n        have a good sTypoAscender value in one style but not in another. This can\n        lead to inconsistent line heights across a typeface family.\n\n        So, it is important to ensure that the sTypoAscender value is greater than\n        the maximum height of the uppercase /Agrave in all styles of a type family.\n    ",
-                    "result": "PASS",
-                    "severity": null
-                },
-                {
                     "description": "Check font contains no unreachable glyphs",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:unreachable_glyphs>",
@@ -4082,7 +4005,7 @@
                     "description": "Checking with fontTools.ttx",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:ttx_roundtrip>",
@@ -4114,7 +4037,7 @@
                     "description": "Do we have the latest version of FontBakery installed?",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:fontbakery_version>",
@@ -4146,7 +4069,7 @@
                     "description": "Familyname must be unique according to namecheck.fontdata.com",
                     "documentation": null,
                     "experimental": false,
-                    "filename": "ARScrittura-Regular.ttf",
+                    "filename": "Scrivi-Regular.ttf",
                     "key": [
                         "<Section: Universal Profile Checks>",
                         "<FontBakeryCheck:fontdata_namecheck>",
@@ -4185,6 +4108,83 @@
                 "PASS": 44,
                 "SKIP": 23,
                 "WARN": 3
+            }
+        },
+        {
+            "checks": [
+                {
+                    "description": "List all superfamily filepaths",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Superfamily Checks>",
+                        "<FontBakeryCheck:superfamily/list>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": "family-path",
+                                "message": "scrivi/fonts/ttf"
+                            },
+                            "status": "INFO"
+                        }
+                    ],
+                    "module": "superfamily.list",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/1487"
+                    ],
+                    "rationale": "\n        This is a merely informative check that lists all sibling families\n        detected by fontbakery.\n\n        Only the fontfiles in these directories will be considered in\n        superfamily-level checks.\n    ",
+                    "result": "INFO",
+                    "severity": null
+                },
+                {
+                    "description": "Each font in set of sibling families must have the same set of vertical metrics values.",
+                    "documentation": null,
+                    "experimental": false,
+                    "filename": "Scrivi-Regular.ttf",
+                    "key": [
+                        "<Section: Superfamily Checks>",
+                        "<FontBakeryCheck:superfamily/vertical_metrics>",
+                        [
+                            [
+                                "font",
+                                0
+                            ]
+                        ]
+                    ],
+                    "logs": [
+                        {
+                            "message": {
+                                "code": null,
+                                "message": "Sibling families were not detected."
+                            },
+                            "status": "SKIP"
+                        }
+                    ],
+                    "module": "superfamily.vertical_metrics",
+                    "proposal": [
+                        "https://github.com/fonttools/fontbakery/issues/1487"
+                    ],
+                    "rationale": "\n        We may want all fonts within a super-family (all sibling families) to have\n        the same vertical metrics so their line spacing is consistent\n        across the super-family.\n\n        This is an experimental extended version of the\n        `family/vertical_metrics` check and for now it will only result in WARNs.\n    ",
+                    "result": "SKIP",
+                    "severity": null
+                }
+            ],
+            "key": [
+                "Superfamily Checks",
+                null,
+                null
+            ],
+            "result": {
+                "INFO": 1,
+                "SKIP": 1
             }
         }
     ]

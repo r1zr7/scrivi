@@ -1,31 +1,22 @@
-AR Scrittura — Alessandro Resch
-Versione font 1.003 — distribuzione pubblica autonoma.
-Nome famiglia approvato il 27 ottobre 2026.
+Scrivi 1.004 — Alessandro Resch
+2 novembre 2026. Licenza SIL Open Font License 1.1.
 
-Installare fonts/ARScrittura-Regular.ttf oppure usare web/ar-scrittura.css.
-Nome CSS: 'AR Scrittura'. Non 'AR-Scrittura'.
-392 caratteri, Regular, licenza SIL Open Font License 1.1 senza Reserved Font Name.
-Anteprima offline: Anteprima.html, con testo di controllo già inserito.
-Confronto corrente: specimen/accenti-alti-prima-dopo.png (ĥ, ȟ e ǩ).
-Confronto storico dei contorni: specimen/contorni-prima-dopo.png (1.000 → 1.001).
-Aprire dalla nuova cartella ar-scrittura-1.003 per evitare la cache della versione precedente.
-Per installare il TTF in Windows, sostituire la precedente versione e riaprire i programmi.
-Sorgenti e report inclusi.
+Il font si chiamava AR Scrittura; il nome corrente della famiglia è Scrivi.
+Installare fonts/ttf/Scrivi-Regular.ttf. Per il sito usare il WOFF2 in
+fonts/webfonts/ con web/scrivi.css, conservando i percorsi relativi.
 
-README.md: installazione, compilazione e risultati dei test.
-PUBBLICAZIONE.md: passaggi ancora necessari per repository e cataloghi.
-OFL.txt: licenza completa.
+Anteprima.html: prova offline usando i file locali del pacchetto.
+Scrivi.html: pagina autonoma con font incorporato e pulsante di download.
+Per pubblicarla, copiare Scrivi.html accanto a Scrivi-1.004-Pubblico.zip.
+Non caricare questo ZIP come tema o plugin WordPress: contiene un font.
 
-Il font non è ancora stato inviato/accettato da Google Fonts o altre directory.
+392 caratteri codificati, 394 glifi, un solo stile Regular (400).
+I disegni e il comportamento tipografico della 1.003 sono conservati.
+Il nome, i percorsi e il copyright sono aggiornati.
+La vecchia famiglia e Scrivi sono nomi distinti nei menu delle applicazioni.
+Se un sito usa ancora font-family: 'AR Scrittura', aggiornare esplicitamente il CSS.
+Il tema AR-Tema già distribuito non viene modificato da questo pacchetto.
 
-Revisione 1.003: accenti di ĥ, ȟ e ǩ alzati sopra le aste.
-Confronto: specimen/accenti-alti-prima-dopo.png.
-Autore: Alessandro Resch.
-
-Pacchetto pubblico preparato il 29 ottobre 2026.
-Le ultime correzioni sono state verificate nei campioni grandi e piccoli.
-Font invariato rispetto alla 1.003 già provata: aggiornati solo i materiali.
-USO-WEB.txt: come pubblicare il font e lo ZIP sul proprio sito.
-TESTO-PRESENTAZIONE.txt: testo per la pagina del progetto.
-submission/: materiale tecnico in bozza per Google Fonts.
-Non è un tema o plugin WordPress: lo ZIP non va installato come tale.
+README.md: sorgenti, compilazione, licenze e dichiarazione sull'assistenza AI.
+qa/: verifiche tecniche e avvisi residui. OFL.txt: licenza completa del font.
+La candidatura Google Fonts è aperta; il font non è ancora ammesso al catalogo.

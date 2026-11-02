@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AR-Scrittura. Copyright (c) 2026 Alessandro Resch. SIL OFL 1.1.
+"""Scrivi. Copyright (c) 2026 Alessandro Resch. SIL OFL 1.1.
 Original monoline drawings; no external font is copied or embedded.
 """
 from pathlib import Path
@@ -21,8 +21,8 @@ from shapely.affinity import translate, scale
 ROOT=Path(__file__).resolve().parents[1]
 SOURCES=Path(__file__).resolve().parent
 DATA=json.loads((SOURCES/'glyphs.json').read_text())
-FAMILY='AR Scrittura'
-VERSION='1.003'
+FAMILY='Scrivi'
+VERSION='1.004'
 
 class FlattenPen(BasePen):
 	def __init__(self):
@@ -185,7 +185,7 @@ def main():
 	fb.setupGlyf(glyphs)
 	fb.setupHorizontalMetrics(metrics)
 	fb.setupHorizontalHeader(ascent=1030,descent=-310,lineGap=0)
-	fb.setupNameTable({'familyName':FAMILY,'styleName':'Regular','uniqueFontIdentifier':VERSION+';ARSC;ARScrittura-Regular','fullName':FAMILY+' Regular','psName':'ARScrittura-Regular','version':'Version '+VERSION,'copyright':'Copyright 2026 The AR Scrittura Project Authors (https://ar-scrittura.workspace-833185.chatgpt.site/)','designer':'Alessandro Resch','manufacturer':'Alessandro Resch','description':'Original monoline handwriting by Alessandro Resch. Separated letters with simple strokes for names, headings and short messages.','licenseDescription':'This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org','licenseInfoURL':'https://openfontlicense.org'})
+	fb.setupNameTable({'familyName':FAMILY,'styleName':'Regular','uniqueFontIdentifier':VERSION+';ARSC;Scrivi-Regular','fullName':FAMILY+' Regular','psName':'Scrivi-Regular','version':'Version '+VERSION,'copyright':'Copyright 2026 The Scrivi Project Authors (https://github.com/r1zr7/scrivi)','designer':'Alessandro Resch','manufacturer':'Alessandro Resch','description':'Original monoline handwriting by Alessandro Resch. Separated letters with simple strokes for names, headings and short messages.','licenseDescription':'This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org','licenseInfoURL':'https://openfontlicense.org'})
 	fb.setupOS2(version=4,sTypoAscender=1030,sTypoDescender=-310,sTypoLineGap=0,usWinAscent=1030,usWinDescent=310,sxHeight=420,sCapHeight=700,usWeightClass=400,usWidthClass=5,fsType=0,fsSelection=0xC0,ulCodePageRange1=0x00000093,ulCodePageRange2=0,achVendID='ARSC')
 	fb.setupPost(keepGlyphNames=True,underlinePosition=-160,underlineThickness=25)
 	fb.setupMaxp()
@@ -242,7 +242,7 @@ def main():
 	i.familyName=FAMILY;i.styleName='Regular';i.unitsPerEm=1000
 	i.ascender=1030;i.descender=-310;i.xHeight=420;i.capHeight=700
 	i.versionMajor=int(VERSION.split('.')[0]);i.versionMinor=int(VERSION.split('.')[1])
-	i.copyright='Copyright 2026 The AR Scrittura Project Authors (https://ar-scrittura.workspace-833185.chatgpt.site/)'
+	i.copyright='Copyright 2026 The Scrivi Project Authors (https://github.com/r1zr7/scrivi)'
 	i.openTypeNameDesigner='Alessandro Resch';i.openTypeNameManufacturer='Alessandro Resch'
 	i.openTypeNameDescription=fb.font['name'].getDebugName(10)
 	i.openTypeNameLicense=fb.font['name'].getDebugName(13)
@@ -254,14 +254,14 @@ def main():
 	i.openTypeOS2WinAscent=1030;i.openTypeOS2WinDescent=310
 	i.openTypeHheaAscender=1030;i.openTypeHheaDescender=-310;i.openTypeHheaLineGap=0
 	i.postscriptUnderlinePosition=-160;i.postscriptUnderlineThickness=25
-	i.postscriptFontName='ARScrittura-Regular'
+	i.postscriptFontName='Scrivi-Regular'
 	for gn in order:
 		g=ufo.newGlyph(gn);g.width=metrics[gn][0]
 		if gn.startswith('uni'):g.unicodes=[int(gn[3:],16)]
 		glyphs[gn].draw(SegmentToPointPen(g.getPointPen()),glyphs)
 	ufo.glyphOrder=order;ufo.features.text=features
-	ufo.save(SOURCES/'AR-Scrittura-Regular.ufo',overwrite=True)
-	out=ROOT/'fonts'/'ARScrittura-Regular.ttf'
+	ufo.save(SOURCES/'Scrivi-Regular.ufo',overwrite=True)
+	out=ROOT/'fonts'/'ttf'/'Scrivi-Regular.ttf'
 	names=fb.font['name']
 	FontProject().run_from_ufos([ufo],output=['ttf'],output_path=str(out),use_production_names=False)
 	fb.font=TTFont(out)
@@ -283,7 +283,7 @@ def main():
 	fb.font['prep']=newTable('prep');fb.font['prep'].program=Program()
 	fb.font['prep'].program.fromBytecode([0xB8,0x01,0xFF,0x85,0xB0,0x04,0x8D])
 	fb.save(out)
-	font=TTFont(out);font.recalcTimestamp=False;font.flavor='woff2';font.save(ROOT/'web'/'AR-Scrittura-Regular.woff2')
+	font=TTFont(out);font.recalcTimestamp=False;font.flavor='woff2';font.save(ROOT/'fonts'/'webfonts'/'Scrivi-Regular.woff2')
 	(ROOT/'qa'/'coverage.json').write_text(json.dumps({'family':FAMILY,'version':VERSION,'author':'Alessandro Resch','encoded_characters':len(CHARS),'glyphs':len(order),'characters':''.join(CHARS),'kerning_pairs':len(pairs)},indent='\t',ensure_ascii=False),encoding='utf-8')
 	print(f'{len(CHARS)} characters / {len(order)} glyphs; TTF and WOFF2 built.')
 

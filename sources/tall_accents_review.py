@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
 	parser=argparse.ArgumentParser();parser.add_argument('--baseline',type=Path);args=parser.parse_args()
-	path=ROOT/'fonts/ARScrittura-Regular.ttf';f=TTFont(path);cmap=f.getBestCmap();checks=[]
+	path=ROOT/'fonts/ttf/Scrivi-Regular.ttf';f=TTFont(path);cmap=f.getBestCmap();checks=[]
 	for ch in 'ĥȟǩ':
 		parts=contours(f,ch);assert len(parts)==2,(ch,len(parts))
 		parts.sort(key=lambda p:p.bounds[1]);base,mark=parts

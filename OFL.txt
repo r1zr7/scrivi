@@ -1,4 +1,4 @@
-Copyright 2026 The AR Scrittura Project Authors (https://ar-scrittura.workspace-833185.chatgpt.site/)
+Copyright 2026 The Scrivi Project Authors (https://github.com/r1zr7/scrivi)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:

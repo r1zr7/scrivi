@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
 	parser=argparse.ArgumentParser();parser.add_argument('--baseline',type=Path);args=parser.parse_args()
-	current=ROOT/'fonts/ARScrittura-Regular.ttf'
+	current=ROOT/'fonts/ttf/Scrivi-Regular.ttf'
 	columns=[('1.000 · prima',args.baseline),('1.001 · correzione',current)] if args.baseline else [('1.001 · correzione',current)]
 	width=620*len(columns)
 	im=Image.new('RGB',(width,950),'#f6f4ef');d=ImageDraw.Draw(im)

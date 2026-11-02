@@ -2,7 +2,7 @@ Autore: Alessandro Resch. 29 ottobre 2026.
 Materiale in bozza, non inviato. Nessuna ammissione a Google Fonts dichiarata.
 
 METADATA.pb.example: campi iniziali latin/latin-ext/menu, non metadati definitivi.
-Il copyright è quello reale della 1.003; non viene inventato un URL GitHub.
+Il copyright è quello reale della 1.004; non viene inventato un URL GitHub.
 Prima dell'invio: creare/verificare repository pubblico, aggiornare il copyright
 nel font/OFL, ricompilare una versione successiva e rigenerare i report.
 article/ARTICLE.en_us.html: bozza editoriale in terza persona. Richiede ancora

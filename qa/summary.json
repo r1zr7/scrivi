@@ -1,61 +1,51 @@
 {
-	"family": "AR Scrittura",
+	"family": "Scrivi",
 	"author": "Alessandro Resch",
-	"font_version": "1.003",
-	"status": "public direct distribution; latest corrected samples visually approved; Google Fonts submission pending",
+	"font_version": "1.004",
+	"date": "2026-11-02",
+	"status": "technical checks complete; remaining warnings and author declarations pending review",
 	"fontbakery": {
+		"googlefonts": {
+			"(not finished)": 0,
+			"INFO": 7,
+			"PASS": 113,
+			"SKIP": 110,
+			"WARN": 6
+		},
 		"universal": {
 			"(not finished)": 0,
 			"INFO": 3,
 			"PASS": 80,
 			"SKIP": 41,
 			"WARN": 3
-		},
-		"googlefonts": {
-			"(not finished)": 0,
-			"INFO": 8,
-			"PASS": 109,
-			"SKIP": 112,
-			"WARN": 7
 		}
 	},
 	"release_assertions": 604,
-	"tall_accents_review": {
+	"rename_review": {
 		"result": "PASS",
 		"author": "Alessandro Resch",
-		"version": "Version 1.003",
-		"checks": [
-			{
-				"character": "ĥ",
-				"vertical_gap_font_units": 65.0
-			},
-			{
-				"character": "ȟ",
-				"vertical_gap_font_units": 65.0
-			},
-			{
-				"character": "ǩ",
-				"vertical_gap_font_units": 65.0
-			}
-		],
-		"sha256": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2",
-		"baseline": {
-			"version": "1.002",
-			"changed_encoded_outlines": [
-				"ĥ",
-				"ǩ",
-				"ȟ"
-			],
-			"all_advances_unchanged": true,
-			"GSUB_GDEF_unchanged": true,
-			"GPOS_updated_for_tall_lowercase_accents": true
-		}
+		"family": "Scrivi",
+		"version": "1.004",
+		"sha256": "a9413aff10e8f6f14ef370c2b7d779223aec3e185636b1020ca7af9c1a7e6983",
+		"unchanged_from_previous_release": [
+			"outlines",
+			"character_coverage",
+			"widths",
+			"vertical_metrics",
+			"kerning",
+			"mark_positioning",
+			"substitutions",
+			"hinting_program"
+		]
 	},
-	"public_repository_created": true,
-	"catalog_submission_sent": true,
-	"public_package_date": "2026-10-29",
-	"public_repository_url": "https://github.com/r1zr7/ar-scrittura",
-	"catalog_submission_type": "preliminary naming and onboarding review",
-	"catalog_submission_url": "https://github.com/google/fonts/issues/11207",
-	"catalog_admitted": false
+	"repository": "https://github.com/r1zr7/scrivi",
+	"google_fonts_issue": "https://github.com/google/fonts/issues/11207",
+	"catalog_admitted": false,
+	"CLA_status": "not verified; author must complete personally",
+	"name_check": {
+		"exact_name": "Scrivi",
+		"result": "No exact-match font found",
+		"date": "2026-11-02",
+		"url": "https://namecheck.fontdata.com/?q=Scrivi"
+	}
 }

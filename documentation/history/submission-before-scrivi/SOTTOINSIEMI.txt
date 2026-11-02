@@ -1,8 +1,8 @@
-AR Scrittura — sottoinsiemi Google Fonts
+Scrivi — sottoinsiemi Google Fonts
 Autore: Alessandro Resch. 29 ottobre 2026.
 Stato: aperto per la candidatura; nessuna richiesta inviata.
 
-I seguenti 15 caratteri sono presenti nel font completo 1.003, ma il controllo
+I seguenti 15 caratteri sono presenti nel font completo 1.004, ma il controllo
 FontBakery 1.1.0 con glyphsets 1.1.0 li segnala fuori da latin/latin-ext:
 
 U+02D8  BREVE

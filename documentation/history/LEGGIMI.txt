@@ -1,0 +1,3 @@
+Autore: Alessandro Resch.
+Materiale storico precedente alla rinomina in Scrivi.
+Le informazioni correnti sono README.md e PUBBLICAZIONE.md nella radice.

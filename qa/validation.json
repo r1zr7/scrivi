@@ -13,12 +13,12 @@
 		"License, author, family and embedding metadata checked"
 	],
 	"limitations": [
-		"Author approved AR Scrittura; Google Fonts admission and naming review pending",
+		"Scrivi approved by author; namecheck exact-match search found no font on 2 November 2026; catalog admission pending",
 		"Only Regular; review covers selected supported languages, not every possible text",
 		"Combining marks and above-mark stacking provided; arbitrary stacks can exceed normal line height"
 	],
 	"sha256": {
-		"ARScrittura-Regular.ttf": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2",
-		"AR-Scrittura-Regular.woff2": "4c0815cc659427f23430786aa6de2b631c6f77f734d67c639153e9d6f1eaca43"
+		"Scrivi-Regular.ttf": "a9413aff10e8f6f14ef370c2b7d779223aec3e185636b1020ca7af9c1a7e6983",
+		"Scrivi-Regular.woff2": "318c903ee92172dfc98a1c31373e2e3dcb1e49de99c5d6f78b5a7ce44aefa687"
 	}
 }

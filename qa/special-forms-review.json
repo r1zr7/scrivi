@@ -1,8 +1,8 @@
 {
 	"result": "PASS",
-	"version": "1.003",
+	"version": "1.004",
 	"author": "Alessandro Resch",
-	"sha256": "a6db06bffb248cfd24d633872a9aa4df77a48749d74a29b34f8deebc208316e2",
+	"sha256": "a9413aff10e8f6f14ef370c2b7d779223aec3e185636b1020ca7af9c1a7e6983",
 	"long_s": {
 		"distinct_from_f": true,
 		"crossbar_absent": true

@@ -78,3 +78,11 @@ con le precomposte. Correzione visiva della 1.003 ritenuta soddisfacente.
 Gli altri campioni di consonanti esaminati non mostrano anomalie evidenti.
 Questo controllo non costituisce una certificazione linguistica o l’ammissione
 ai cataloghi. Gli altri WARN e requisiti di pubblicazione rimangono aperti.
+
+## Rinomina in Scrivi — 2 novembre 2026
+
+Autore: Alessandro Resch. Famiglia approvata: Scrivi.
+La 1.004 conserva tutti i contorni, le metriche e le tabelle di shaping della
+1.003, come verificato da rename-review.json. Le prove visive precedenti restano
+quindi pertinenti. La rinomina non dichiara completata una revisione di ogni
+possibile sequenza né l’ammissione a Google Fonts.

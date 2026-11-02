@@ -13,7 +13,7 @@ def version(path):
 
 def main():
 	parser=argparse.ArgumentParser();parser.add_argument('--baseline',type=Path);args=parser.parse_args()
-	current=ROOT/'fonts/ARScrittura-Regular.ttf'
+	current=ROOT/'fonts/ttf/Scrivi-Regular.ttf'
 	columns=[(version(args.baseline)+' · prima',args.baseline),(version(current)+' · correzione',current)] if args.baseline else [(version(current),current)]
 	im=Image.new('RGB',(660*len(columns),1180),'#f6f4ef');d=ImageDraw.Draw(im)
 	for n,(title,path) in enumerate(columns):

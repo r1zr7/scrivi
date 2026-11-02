@@ -7,11 +7,11 @@
     <key>capHeight</key>
     <integer>700</integer>
     <key>copyright</key>
-    <string>Copyright 2026 The AR Scrittura Project Authors (https://ar-scrittura.workspace-833185.chatgpt.site/)</string>
+    <string>Copyright 2026 The Scrivi Project Authors (https://github.com/r1zr7/scrivi)</string>
     <key>descender</key>
     <integer>-310</integer>
     <key>familyName</key>
-    <string>AR Scrittura</string>
+    <string>Scrivi</string>
     <key>openTypeHheaAscender</key>
     <integer>1030</integer>
     <key>openTypeHheaDescender</key>
@@ -58,7 +58,7 @@
     <key>openTypeOS2WinDescent</key>
     <integer>310</integer>
     <key>postscriptFontName</key>
-    <string>ARScrittura-Regular</string>
+    <string>Scrivi-Regular</string>
     <key>postscriptUnderlinePosition</key>
     <integer>-160</integer>
     <key>postscriptUnderlineThickness</key>
@@ -70,7 +70,7 @@
     <key>versionMajor</key>
     <integer>1</integer>
     <key>versionMinor</key>
-    <integer>3</integer>
+    <integer>4</integer>
     <key>xHeight</key>
     <integer>420</integer>
   </dict>

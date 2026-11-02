@@ -1,90 +1,59 @@
-# Pubblicazione di AR Scrittura
+# Pubblicazione di Scrivi
 
-Autore: Alessandro Resch. Aggiornato il 29 ottobre 2026.
+Autore: Alessandro Resch. 2 novembre 2026. Versione font 1.004.
 
-Nome definitivo della famiglia approvato dall'autore: **AR Scrittura**.
-File desktop canonico: `fonts/ARScrittura-Regular.ttf`.
-Nome CSS: `'AR Scrittura'`. La presentazione del progetto può usare AR-Scrittura.
+Nome famiglia/menu/CSS: **Scrivi**. PostScript: **Scrivi-Regular**.
+Repository: https://github.com/r1zr7/scrivi
+Richiesta esistente: https://github.com/google/fonts/issues/11207
 
-Questo pacchetto 1.003 corregge gli accenti sopra le aste di ĥ, ȟ e ǩ,
-con posizionamento coerente degli accenti combinanti su h/k/l.
-Non rappresenta un'ammissione ai cataloghi.
-Le verifiche sono documentate in README.md e nei report completi in qa/.
-I binari conservano le correzioni a ĺ, Ș/ș, Ț/ț, virgola combinante e cerchio puntinato
-e aggiungono le nuove forme di ſ e ĸ, senza modificarne le larghezze.
-Spaziature e caron laterali approvati restano invariati. Vedere qa/REVISIONE-VISIVA.md.
+Il repository è stato rinominato da ar-scrittura. Il copyright del font e la prima
+riga di OFL.txt ora contengono l’URL reale del repository. File TTF/WOFF2, UFO,
+script, anteprima e pagina di download usano Scrivi. I materiali storici sono
+isolati in documentation/history, e la cronologia Git conserva le vecchie release.
 
-## Passaggi rimasti per Google Fonts
+## Controlli completati
 
-1. Il connettore GitHub ha verificato l'account `r1zr7`. La creazione del
-   repository è rimasta sospesa: non è stata verificata una sessione browser
-   autenticata e non esiste ancora un repository pubblico confermato.
-2. Creare un repository pubblico, nome suggerito `ar-scrittura`, verificando che
-   non esista già. Il contenuto di questo pacchetto è predisposto come sua radice.
-3. Sostituire il sito di presentazione nel copyright/OFL/sorgente con l'URL reale
-   del repository, come richiesto da Google. Ricompilare, incrementare la versione
-   font se si pubblica una nuova revisione e rigenerare i report.
-4. Alessandro Resch deve leggere e sottoscrivere personalmente il Google CLA.
-   Nessuna firma o dichiarazione di avvenuta sottoscrizione è stata generata.
-5. Presentare la proposta tramite il modulo ufficiale collegato dalla guida,
-   discutendo iniziali AR, eventuale suffisso One per il singolo peso sottile,
-   sottoinsiemi e metadati del catalogo. FontBakery include AR fra le eccezioni
-   generiche agli acronimi; ciò non è una specifica approvazione di questo progetto.
-6. Completare la revisione editoriale e tipografica richiesta dalla piattaforma.
+- make check: 604 asserzioni di rilascio e ricompilazione riproducibile passate.
+- Confronto binario con 1.003: contorni, cmap, larghezze, metriche, GPOS, GSUB,
+  GDEF e programma di hinting invariati. Rinominati metadati e URL.
+- FontBakery Google Fonts: 113 PASS, 0 FAIL/ERROR/FATAL, 6 WARN, 7 INFO, 110 SKIP.
+- FontBakery Universal: 80 PASS, 0 FAIL/ERROR/FATAL, 3 WARN, 3 INFO, 41 SKIP.
+- Articolo, immagine e relativo controllo passati. Report integrali in qa/.
+- Nome Scrivi verificato su fontdata: nessuna corrispondenza esatta il 2 novembre.
+- Layout essenziale upstream: fonts/ttf, fonts/webfonts, sources/UFO/build.sh,
+  documentazione e articolo, requirements alla radice, autori e licenza.
 
-## Avvisi residui di FontBakery
+La guida ammette build.sh in alternativa a config.yaml e non impone i workflow
+esatti del project-template. Il Makefile è incluso come comodo ingresso.
 
-- alt_caron: i quattro glifi sono contorni autonomi, perciò il controllo automatico
-  non li valuta; la tavola specimen/lingue-e-accenti.png mostra il caron laterale.
-- contour_count: dopo le correzioni rimangono @, § e U+00AD. Le forme di @ e §
-  non mostrano anomalie evidenti nei campioni esaminati; U+00AD è stato verificato nelle prove del browser inviate dall’autore, senza
-  anomalie; il WARN sulla presenza del carattere rimane. Il WARN complessivo rimane, ma non segnala più ĺ, Ș/ș o ◌.
-- soft_hyphen: U+00AD è conservato per compatibilità con il font già distribuito.
-- outline_semi_vertical: lievi inclinazioni del disegno manoscritto conservate.
-- metadata/unreachable_subsetting: concordare inclusioni e METADATA.pb con Google.
-- vendor_id: ARSC è un ID tecnico proposto e non registrato presso Microsoft.
-- article/images: bozza testuale in submission/article/ARTICLE.en_us.html; manca
-  ancora il link al repository pubblico e il materiale deve essere valutato dal team.
+## Punti ancora aperti
 
-I risultati SKIP non sono controlli superati. Alcuni richiedono metadati del
-catalogo non ancora presenti o tecnologie non usate da questo font statico.
-I report finali sono stati eseguiti senza --skip-network, con timeout di 5 secondi.
+I sei WARN sono riportati integralmente e commentati in qa/WARN-REVIEW.txt.
+Non sono stati soppressi. SKIP non significa PASS. L’ammissione richiede ancora
+la valutazione del team, l’accordo sui sottoinsiemi e le decisioni editoriali,
+compresa la convenzione per una famiglia a singolo peso. Nessun suffisso One è
+stato aggiunto al nome approvato senza indicazioni del team.
 
-## Altre piattaforme
+La checklist ufficiale è ripristinata integralmente in submission/CHECKLIST.md.
+Le voci personali non verificabili restano da confermare dall’autore: assenza di
+versioni retail più grandi, titolarità, adesione completa ai requisiti e impegno
+alla manutenzione. Il CLA va letto e firmato personalmente; nessuna firma è stata
+eseguita né dichiarata da questo lavoro.
 
-TTF, OFL, descrizione inglese e specimen sono pronti per FontSpace, dafont e per
-la valutazione redazionale di Font Squirrel. Occorrono accesso autore, invio e
-revisione previsti dalle singole piattaforme. Non è stato eseguito alcun invio.
-L'OFL consente uso personale e commerciale: non presentare il font come riservato
-all'uso personale. Il sito proprio e AR-Tema dovranno adottare coerentemente il
-nome CSS AR Scrittura quando si aggiornerà il font distribuito.
+## Licenze
 
-## Fonti
+Font e software sorgente: OFL 1.1 senza Reserved Font Name.
+Nuova immagine promozionale: CC BY-SA 4.0, dettagli in documentation/image-license.txt.
+Nessun monogramma AR riservato incluso. Assistenza AI dichiarata nel README.
 
+## Sito proprio
+
+Scrivi.html incorpora il WOFF2 e contiene il link a Scrivi-1.004-Pubblico.zip.
+Caricare i due file nella stessa cartella del sito. Il pacchetto non è un tema
+WordPress. Il vecchio AR-Tema non viene aggiornato da questa release del font.
+
+Fonti ufficiali:
+https://googlefonts.github.io/gf-guide/upstream.html
 https://googlefonts.github.io/gf-guide/onboarding.html
-https://googlefonts.github.io/gf-guide/requirements.html
-https://googlefonts.github.io/gf-guide/statics.html
-https://googlefonts.github.io/gf-guide/license-file.html
-https://cla.developers.google.com/
-
-## Distribuzione autonoma
-
-Il pacchetto pubblico 1.003 del 29 ottobre conserva i binari già verificati.
-I materiali della candidatura sono bozze, separati in submission/; non sono
-necessari per usare o ospitare il font completo. Le immagini finali grandi e
-piccole della 1.003 hanno completato il controllo delle correzioni h/k.
-Per i 15 codepoint esclusi dai sottoinsiemi consultare submission/SOTTOINSIEMI.txt.
-La revisione visiva documentata riguarda i campioni esaminati, non ogni possibile
-sequenza o applicazione. Non sono dichiarati risolti tutti i WARN.
-
-## Aggiornamento 1 novembre 2026
-
-Autore: Alessandro Resch.
-Repository pubblico creato: https://github.com/r1zr7/ar-scrittura
-Le indicazioni precedenti sulla creazione sospesa descrivono lo stato storico.
-Importazione iniziale della 1.003, senza cambiare i binari. Il copyright/OFL
-conserva quindi l’URL del sito già presente nella release. La modifica all’URL
-richiederà una nuova versione del font, compilazione e verifica.
-Non risultano ancora firmati il CLA o inviata la candidatura da questo progetto.
-Il modello di candidatura attuale richiede di dichiarare l’assistenza AI.
-Il nome AR Scrittura richiede discussione perché AR sono iniziali dell’autore.
+https://googlefonts.github.io/gf-guide/article.html
+https://namecheck.fontdata.com/?q=Scrivi

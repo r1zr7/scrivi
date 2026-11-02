@@ -1,14 +1,14 @@
-AR Scrittura — bozza candidatura Google Fonts
+Scrivi — bozza candidatura Google Fonts
 Autore: Alessandro Resch. Preparata il 1 novembre 2026.
 Stato: non inviata. Repository pubblico creato; CLA e revisione ancora da completare.
 
-Proposed issue title: Add AR Scrittura — naming review requested
+Proposed issue title: Add Scrivi — naming review requested
 
 Font Project Git Repo URL:
-https://github.com/r1zr7/ar-scrittura
+https://github.com/r1zr7/scrivi
 
 Super short description:
-AR Scrittura is an original upright monoline handwriting typeface by Alessandro
+Scrivi is an original upright monoline handwriting typeface by Alessandro
 Resch, with separated letters, compact spacing and restrained flourishes.
 It offers one Regular style, 392 encoded characters and GF Latin Core coverage,
 editable UFO sources, original drawing data and a reproducible fontmake build.
@@ -19,19 +19,19 @@ font engineering, build scripts, testing, documentation and release preparation.
 Alessandro Resch directed the design decisions and reviewed visual specimens.
 
 Naming review requested:
-The intended family name is AR Scrittura. AR refers to the author's initials.
+The intended family name is Scrivi. AR refers to the author's initials.
 The published onboarding guide excludes copyright-holder initials/acronyms;
 FontBakery's generic naming exception is not project approval. Please advise
 whether an exception is possible or a different catalog name is required.
 No name-policy compliance declaration is made in this draft.
 
-Quality evidence for version 1.003:
+Quality evidence for version 1.004:
 - Google Fonts FontBakery profile: 109 PASS, 7 WARN, 8 INFO, 112 SKIP.
 - Universal profile: 80 PASS, 3 WARN, 3 INFO, 41 SKIP.
 - No FAIL, ERROR or FATAL in the retained reports.
 - 604 release assertions passed, including reproducible TTF/WOFF2 builds.
 - Latest tall-accent corrections were reviewed in large and small samples.
-- These results are from the retained 1.003 reports, not a new QA run today.
+- These results are from the retained 1.004 reports, not a new QA run today.
 
 Open technical points:
 - 15 encoded codepoints outside the current latin/latin-ext API subsets.
