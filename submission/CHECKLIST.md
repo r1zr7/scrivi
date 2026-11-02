@@ -9,7 +9,7 @@ By opening this issue, I confirm the project meets the following requirements:
 - [x] The entire font project is available in a Github repository (repo) and licensed under the [OFL](https://openfontlicense.org/open-font-license-official-text/)
 - [ ] I confirm that by 'entire font project', no "plus" or "pro" or other larger version of the project exists as a retail font anywhere
 - [x] The source files are available in the repo
-- [ ] I am the sole copyright author of the entire project, or all other copyright authors have licensed their work to me under the OFL, and I commit to clearly disclosing if AI tools were used in the creation of this project.
+- [x] I am the sole copyright author of the entire project, or all other copyright authors have licensed their work to me under the OFL, and I commit to clearly disclosing if AI tools were used in the creation of this project.
 - [x] There are no "Reserved Font Names" in the OFL license information, or in the project documentation of any known upstream projects. If there are RFNs, they are not used in whole or in part in this family name, or, I want to discuss how Google can work with my use of them.
 - [x] The family name is unique according to [namecheck.fontdata.com](https://namecheck.fontdata.com/)
 - [x] The name of the font family expected to appear on app menus must be very clearly communicated and definitive. It should not include any copyright holder's full names or acronyms.
@@ -26,3 +26,5 @@ AI assistance: ChatGPT/Codex assisted drawing construction, font engineering, bu
 
 Current full FontBakery results: Google Fonts 113 PASS, 6 WARN, 7 INFO, 110 SKIP; Universal 80 PASS, 3 WARN, 3 INFO, 41 SKIP; no FAIL/ERROR/FATAL. All residual warnings are documented in qa/WARN-REVIEW.txt. The pending full-compliance declaration must not be inferred from these technical results. The Google CLA remains a separate personal step.
 
+
+Author confirmation recorded on 2 November 2026: Alessandro Resch explicitly confirmed sole rights ownership and the AI-assistance disclosure. Other personal declarations remain pending.
